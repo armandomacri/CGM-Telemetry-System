@@ -30,13 +30,13 @@ PROCESS(temperature_server, "Temperature sensor Server");
 AUTOSTART_PROCESSES(&temperature_server);
 
 //*************************** GLOBAL VARIABLES *****************************//
-//char* service_url = "/registration";
+char* service_url = "/registration";
 
 static bool connected = false;
-//static bool registered = false;
+static bool registered = false;
 
 static struct etimer wait_connectivity;
-//static struct etimer wait_registration;
+static struct etimer wait_registration;
 static struct etimer simulation;
 
 extern coap_resource_t res_temperature;
@@ -59,12 +59,11 @@ static void check_connection()
     }
 }
 
-/*
 
 void client_chunk_handler(coap_message_t *response)
 {
     const uint8_t* chunk;
-    
+
     if (response == NULL)
     {
         LOG_INFO("Request timed out\n");
@@ -73,20 +72,21 @@ void client_chunk_handler(coap_message_t *response)
     }
     
     int len = coap_get_payload(response, &chunk);
-    printf("|%.*s", len, (char *)chunk);
+
+    //LOG_INFO("Registration, Success!\n");
     
-    if(strncmp((char*)chunk, "Success", len) == 0)
+    if(strncmp((char*)chunk, "Registration, Success!", len) == 0)
         registered = true;
     else
         etimer_set(&wait_registration, CLOCK_SECOND * REG_TRY_INTERVAL);
 }
-*/
-//*************************** THREAD *****************************//
+
+//*************************** MAIN THREAD *****************************//
 PROCESS_THREAD(temperature_server, ev, data)
 {
 
-    //static coap_endpoint_t server_ep;
-    //static coap_message_t request[1]; // This way the packet can be treated as pointer as usual
+    static coap_endpoint_t server_ep;
+    static coap_message_t request[1]; // This way the packet can be treated as pointer as usual
 
     PROCESS_BEGIN();
     
@@ -96,10 +96,10 @@ PROCESS_THREAD(temperature_server, ev, data)
         PROCESS_WAIT_UNTIL(etimer_expired(&wait_connectivity));
         check_connection();
     }
-    LOG_INFO("CONNECTED\n");
+    LOG_INFO("CONNECTED");
 
 
-/*
+
     while (!registered) {
         LOG_INFO("Sending registration message\n");
         
@@ -113,7 +113,6 @@ PROCESS_THREAD(temperature_server, ev, data)
         PROCESS_WAIT_UNTIL(etimer_expired(&wait_registration));
     }
     LOG_INFO("REGISTERED\nStarting temperature server");
-*/
 
     // RESOURCES ACTIVATION
     coap_activate_resource(&res_temperature, "temperature");

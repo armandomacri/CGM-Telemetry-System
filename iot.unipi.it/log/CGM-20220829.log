@@ -1,0 +1,12 @@
+2022-08-29 12:22:28,555 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-29 12:44:26,893 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-29 12:46:41,373 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-29 12:46:55,525 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-29 12:48:16,543 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-29 12:49:12,203 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-29 12:51:43,185 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-29 13:45:45,019 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-29 13:46:35,848 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-29 13:46:59,705 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-29 13:47:02,326 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:203:3:3:3] is now registered
+2022-08-29 13:49:26,328 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - ----OBSERVING FAILED----

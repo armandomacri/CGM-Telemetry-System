@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN">
+    <Properties>
+        <Property name="APP_LOG_ROOT">log</Property>
+    </Properties>
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT">
+            <PatternLayout pattern="%d{HH:mm:ss} [%-6p] - %msg%n"/>
+        </Console>
+        <RollingFile name="FileAppender" fileName="${APP_LOG_ROOT}/CGM-${date:yyyyMMdd}.log"
+                     filePattern="${APP_LOG_ROOT}/FUT-${date:yyyyMMdd}.log.gz">
+            <PatternLayout pattern="%d{DEFAULT} [%t] %-5level %logger{36} - %msg%n"/>
+            <Policies>
+                <SizeBasedTriggeringPolicy size="19500KB"/>
+            </Policies>
+        </RollingFile>
+        </Appenders>
+    <Loggers>
+        <Root level="info" additivity="false">
+            <AppenderRef ref="ConsoleAppender"/>
+            <AppenderRef ref="FileAppender" level="info"/>
+        </Root>
+    </Loggers>
+</Configuration>
