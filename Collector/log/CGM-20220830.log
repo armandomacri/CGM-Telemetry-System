@@ -1,0 +1,154 @@
+2022-08-30 05:16:46,910 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-30 05:17:17,173 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-30 05:17:17,212 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-30 05:19:39,128 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - ----OBSERVING FAILED----
+2022-08-30 05:19:45,592 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - ----OBSERVING FAILED----
+2022-08-30 05:28:22,726 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-30 05:29:10,322 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-30 05:29:22,495 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-30 05:29:22,514 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-30 05:30:38,246 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - ----OBSERVING FAILED----
+2022-08-30 05:30:39,416 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - ----OBSERVING FAILED----
+2022-08-30 10:20:52,977 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-30 10:21:03,085 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-30 12:21:52,162 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-30 12:22:16,887 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-30 12:22:17,603 [main] ERROR iot.unipi.it.services.TelemetryDBHandler - MySQL Connection Failed! 
+java.sql.SQLException: Access denied for user 'root'@'localhost'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_342]
+	at java.sql.DriverManager.getConnection(DriverManager.java:247) ~[?:1.8.0_342]
+	at iot.unipi.it.services.TelemetryDBHandler.getConnection(TelemetryDBHandler.java:39) ~[classes/:?]
+	at iot.unipi.it.services.TelemetryDBHandler.prova(TelemetryDBHandler.java:80) ~[classes/:?]
+	at iot.unipi.it.Collector.main(Collector.java:17) ~[classes/:?]
+2022-08-30 12:22:34,860 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-30 12:22:35,005 [main] ERROR iot.unipi.it.services.TelemetryDBHandler - MySQL Connection Failed! 
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_342]
+	at java.sql.DriverManager.getConnection(DriverManager.java:247) ~[?:1.8.0_342]
+	at iot.unipi.it.services.TelemetryDBHandler.getConnection(TelemetryDBHandler.java:39) ~[classes/:?]
+	at iot.unipi.it.services.TelemetryDBHandler.prova(TelemetryDBHandler.java:80) ~[classes/:?]
+	at iot.unipi.it.Collector.main(Collector.java:17) ~[classes/:?]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_342]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_342]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_342]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_342]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:953) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:823) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	... 8 more
+Caused by: java.net.UnknownHostException: root: Name or service not known
+	at java.net.Inet6AddressImpl.lookupAllHostAddr(Native Method) ~[?:1.8.0_342]
+	at java.net.InetAddress$2.lookupAllHostAddr(InetAddress.java:929) ~[?:1.8.0_342]
+	at java.net.InetAddress.getAddressesFromNameService(InetAddress.java:1330) ~[?:1.8.0_342]
+	at java.net.InetAddress.getAllByName0(InetAddress.java:1283) ~[?:1.8.0_342]
+	at java.net.InetAddress.getAllByName(InetAddress.java:1199) ~[?:1.8.0_342]
+	at java.net.InetAddress.getAllByName(InetAddress.java:1127) ~[?:1.8.0_342]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:132) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:953) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:823) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	... 8 more
+2022-08-30 12:23:00,137 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-30 12:23:00,660 [main] ERROR iot.unipi.it.services.TelemetryDBHandler - MySQL Connection Failed! 
+java.sql.SQLException: Access denied for user 'root'@'localhost'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_342]
+	at java.sql.DriverManager.getConnection(DriverManager.java:247) ~[?:1.8.0_342]
+	at iot.unipi.it.services.TelemetryDBHandler.getConnection(TelemetryDBHandler.java:39) ~[classes/:?]
+	at iot.unipi.it.services.TelemetryDBHandler.prova(TelemetryDBHandler.java:80) ~[classes/:?]
+	at iot.unipi.it.Collector.main(Collector.java:17) ~[classes/:?]
+2022-08-30 12:26:30,369 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-30 12:26:30,843 [main] ERROR iot.unipi.it.services.TelemetryDBHandler - MySQL Connection Failed! 
+java.sql.SQLException: Access denied for user 'root'@'localhost'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:129) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_342]
+	at java.sql.DriverManager.getConnection(DriverManager.java:247) ~[?:1.8.0_342]
+	at iot.unipi.it.services.TelemetryDBHandler.getConnection(TelemetryDBHandler.java:39) ~[classes/:?]
+	at iot.unipi.it.services.TelemetryDBHandler.prova(TelemetryDBHandler.java:80) ~[classes/:?]
+	at iot.unipi.it.Collector.main(Collector.java:17) ~[classes/:?]
+2022-08-30 12:35:50,838 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-30 12:35:51,368 [main] ERROR iot.unipi.it.services.TelemetryDBHandler - MySQL Connection Failed! 
+java.sql.SQLSyntaxErrorException: Unknown database 'iot_irrigation_system'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_342]
+	at java.sql.DriverManager.getConnection(DriverManager.java:247) ~[?:1.8.0_342]
+	at iot.unipi.it.services.TelemetryDBHandler.getConnection(TelemetryDBHandler.java:39) ~[classes/:?]
+	at iot.unipi.it.services.TelemetryDBHandler.prova(TelemetryDBHandler.java:80) ~[classes/:?]
+	at iot.unipi.it.Collector.main(Collector.java:17) ~[classes/:?]
+2022-08-30 12:36:16,616 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-30 12:37:34,359 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-30 12:58:17,730 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-30 12:59:19,127 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-30 12:59:19,925 [CoapServer#1] ERROR iot.unipi.it.services.TelemetryDBHandler - Error in the insert sensor query! 
+java.sql.SQLSyntaxErrorException: Unknown column 'id' in 'field list'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:120) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1348) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at iot.unipi.it.services.TelemetryDBHandler.addSensor(TelemetryDBHandler.java:62) ~[classes/:?]
+	at iot.unipi.it.device.SmartDevice.<init>(SmartDevice.java:27) ~[classes/:?]
+	at iot.unipi.it.services.resources.ResRegistration.handlePOST(ResRegistration.java:29) ~[classes/:?]
+	at org.eclipse.californium.core.CoapResource.handleRequest(CoapResource.java:217) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.server.ServerMessageDeliverer.deliverRequest(ServerMessageDeliverer.java:105) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack$StackTopAdapter.receiveRequest(BaseCoapStack.java:162) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveRequest(AbstractLayer.java:80) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveRequest(AbstractLayer.java:80) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BlockwiseLayer.receiveRequest(BlockwiseLayer.java:237) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ReliabilityLayer.receiveRequest(ReliabilityLayer.java:218) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveRequest(AbstractLayer.java:80) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack.receiveRequest(BaseCoapStack.java:97) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveRequest(CoapEndpoint.java:736) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveMessage(CoapEndpoint.java:665) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.access$800(CoapEndpoint.java:628) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl$1.run(CoapEndpoint.java:642) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$5.run(CoapEndpoint.java:804) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_342]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_342]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_342]
+2022-08-30 13:01:05,649 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-30 13:01:42,728 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
