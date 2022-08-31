@@ -118,7 +118,33 @@ public final class TelemetryDBService {
     		ps.setString(1, sensor);
     		ps.setInt(2, value);
     		ps.setLong(3, timestamp);
-            ps.execute();
+    		int insertedRow = ps.executeUpdate();
+    		if(insertedRow < 1) {
+    			logger.warn("Something wrong during add observation!");
+    			success = false;
+    		}
+    		
+        } catch (SQLException se) {
+        	logger.error("Error in the add observation query! ", se);
+        	success = false;
+        }
+		return success;
+    }
+    
+    
+    public boolean updateSensorState(String sensor, short status) {
+    	String query = "UPDATE sensors SET status=? WHERE nodeId=?;";
+    	boolean success = true;
+    	getConnection();
+    	try (PreparedStatement ps = conn.prepareStatement(query);) 
+    	{
+    		ps.setShort(1, status);
+    		ps.setString(2, sensor);
+    		int insertedRow = ps.executeUpdate();
+    		if(insertedRow < 1) {
+    			logger.warn("Something wrong during add observation!");
+    			success = false;
+    		}
     		
         } catch (SQLException se) {
         	logger.error("Error in the add observation query! ", se);

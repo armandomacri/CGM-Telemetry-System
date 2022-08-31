@@ -42,7 +42,7 @@ static struct etimer wait_registration;
 static struct etimer simulation;
 
 extern coap_resource_t res_glucose;
-
+extern coap_resource_t res_alarm;
 
 //*************************** UTILITY FUNCTIONS *****************************//
 static void check_connection()
@@ -118,10 +118,10 @@ PROCESS_THREAD(glucose_server, ev, data)
 
     // RESOURCES ACTIVATION
     coap_activate_resource(&res_glucose, "glucose");
+    coap_activate_resource(&res_alarm, "alarm");
 
     // SIMULATION
     etimer_set(&simulation, CLOCK_SECOND * SIMULATION_INTERVAL);
-    //LOG_INFO("Simulation\n");
     
     while (1) {
         PROCESS_WAIT_EVENT();

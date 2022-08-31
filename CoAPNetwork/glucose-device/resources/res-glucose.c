@@ -26,7 +26,7 @@ static void res_put_handler(coap_message_t *request, coap_message_t *response, u
 static void res_event_handler(void);
 
 EVENT_RESOURCE(res_glucose,
-               "</Glucose>;title=\"Glucose sensor\";obs;rt=\"Control\"",
+               "title=\"Glucose sensor\";rt=\"Glucose\";obs",
                res_get_handler,
                NULL,
                res_put_handler,
@@ -68,8 +68,10 @@ static void res_get_handler(coap_message_t *request, coap_message_t *response, u
         */
 
         //PREPARE THE BUFFER
-        sprintf((char *)buffer, "{\"node_id\":%d,\"glucose\":%d,\"timestamp\":%lu}", node_id, glucose, clock_seconds());
+        snprintf((char *)buffer, COAP_MAX_CHUNK_SIZE, "{\"node_id\":%d,\"glucose\":%d,\"timestamp\":%lu}", node_id, glucose, clock_seconds());
         int length = strlen((char*)buffer);
+
+        printf("prova: %s\n", buffer);
 
         // COAP FUNCTIONS
         coap_set_header_content_format(response, APPLICATION_JSON);
@@ -139,7 +141,7 @@ static void res_event_handler(void)
     int random = rand() % 8; // generate 0, 1, 2, 3, 4, 5, 6, 7
 
 
-    if (random <2) {// 25% of changing the value
+    if (random <4) {// 50% of changing the value
         if (random == 0) // decrease
             new_glu -= VARIATION;
         else // increase

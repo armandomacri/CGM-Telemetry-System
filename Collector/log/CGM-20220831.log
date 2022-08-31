@@ -1157,3 +1157,562 @@ java.sql.SQLSyntaxErrorException: Table 'CGM_telemetry_system.observation' doesn
 2022-08-31 08:59:51,048 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
 2022-08-31 09:00:02,030 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
 2022-08-31 09:00:24,894 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 09:21:59,105 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 09:21:59,946 [main] ERROR iot.unipi.it.services.TelemetryDBService - Error in the delete sensor query! 
+java.sql.SQLIntegrityConstraintViolationException: Cannot delete or update a parent row: a foreign key constraint fails (`CGM_telemetry_system`.`observations`, CONSTRAINT `observations_ibfk_1` FOREIGN KEY (`sensor`) REFERENCES `sensors` (`nodeId`))
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1348) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at iot.unipi.it.services.TelemetryDBService.cleanDB(TelemetryDBService.java:60) ~[classes/:?]
+	at iot.unipi.it.Collector.main(Collector.java:17) ~[classes/:?]
+2022-08-31 09:51:48,609 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 09:51:59,727 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 09:52:18,777 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 09:52:18,857 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - Impossible to parse the response!
+org.json.simple.parser.ParseException: null
+	at org.json.simple.parser.Yylex.yylex(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.nextToken(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.JSONValue.parseWithException(Unknown Source) ~[json-simple-1.1.jar:?]
+	at iot.unipi.it.device.SmartDevice$1.onLoad(SmartDevice.java:42) ~[classes/:?]
+	at org.eclipse.californium.core.CoapClient$ObserveMessageObserverImpl.deliver(CoapClient.java:1147) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.succeeded(CoapClient.java:1075) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.onResponse(CoapClient.java:1054) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.coap.Request.setResponse(Request.java:546) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.EndpointManager$ClientMessageDeliverer.deliverResponse(EndpointManager.java:419) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack$StackTopAdapter.receiveResponse(BaseCoapStack.java:175) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ObserveLayer.receiveResponse(ObserveLayer.java:155) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BlockwiseLayer.receiveResponse(BlockwiseLayer.java:395) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ReliabilityLayer.receiveResponse(ReliabilityLayer.java:243) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack.receiveResponse(BaseCoapStack.java:103) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveResponse(CoapEndpoint.java:758) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveMessage(CoapEndpoint.java:669) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.access$800(CoapEndpoint.java:628) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl$1.run(CoapEndpoint.java:642) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$5.run(CoapEndpoint.java:804) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_342]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_342]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_342]
+2022-08-31 09:52:18,918 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] WARN  iot.unipi.it.device.SmartDevice - Message destination incorrect!
+2022-08-31 09:52:22,825 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - Impossible to parse the response!
+org.json.simple.parser.ParseException: null
+	at org.json.simple.parser.Yylex.yylex(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.nextToken(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.JSONValue.parseWithException(Unknown Source) ~[json-simple-1.1.jar:?]
+	at iot.unipi.it.device.SmartDevice$1.onLoad(SmartDevice.java:42) ~[classes/:?]
+	at org.eclipse.californium.core.CoapClient$ObserveMessageObserverImpl.deliver(CoapClient.java:1147) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.succeeded(CoapClient.java:1075) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.onResponse(CoapClient.java:1054) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.coap.Request.setResponse(Request.java:546) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.EndpointManager$ClientMessageDeliverer.deliverResponse(EndpointManager.java:419) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack$StackTopAdapter.receiveResponse(BaseCoapStack.java:175) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ObserveLayer.receiveResponse(ObserveLayer.java:155) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BlockwiseLayer.receiveResponse(BlockwiseLayer.java:395) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ReliabilityLayer.receiveResponse(ReliabilityLayer.java:243) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack.receiveResponse(BaseCoapStack.java:103) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveResponse(CoapEndpoint.java:758) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveMessage(CoapEndpoint.java:669) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.access$800(CoapEndpoint.java:628) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl$1.run(CoapEndpoint.java:642) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$5.run(CoapEndpoint.java:804) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_342]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_342]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_342]
+2022-08-31 09:52:22,833 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] WARN  iot.unipi.it.device.SmartDevice - Message destination incorrect!
+2022-08-31 09:52:30,837 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - Impossible to parse the response!
+org.json.simple.parser.ParseException: null
+	at org.json.simple.parser.Yylex.yylex(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.nextToken(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.JSONValue.parseWithException(Unknown Source) ~[json-simple-1.1.jar:?]
+	at iot.unipi.it.device.SmartDevice$1.onLoad(SmartDevice.java:42) ~[classes/:?]
+	at org.eclipse.californium.core.CoapClient$ObserveMessageObserverImpl.deliver(CoapClient.java:1147) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.succeeded(CoapClient.java:1075) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.onResponse(CoapClient.java:1054) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.coap.Request.setResponse(Request.java:546) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.EndpointManager$ClientMessageDeliverer.deliverResponse(EndpointManager.java:419) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack$StackTopAdapter.receiveResponse(BaseCoapStack.java:175) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ObserveLayer.receiveResponse(ObserveLayer.java:155) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BlockwiseLayer.receiveResponse(BlockwiseLayer.java:395) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ReliabilityLayer.receiveResponse(ReliabilityLayer.java:243) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack.receiveResponse(BaseCoapStack.java:103) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveResponse(CoapEndpoint.java:758) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveMessage(CoapEndpoint.java:669) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.access$800(CoapEndpoint.java:628) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl$1.run(CoapEndpoint.java:642) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$5.run(CoapEndpoint.java:804) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_342]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_342]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_342]
+2022-08-31 09:52:30,843 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] WARN  iot.unipi.it.device.SmartDevice - Message destination incorrect!
+2022-08-31 09:52:34,827 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - Impossible to parse the response!
+org.json.simple.parser.ParseException: null
+	at org.json.simple.parser.Yylex.yylex(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.nextToken(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.JSONValue.parseWithException(Unknown Source) ~[json-simple-1.1.jar:?]
+	at iot.unipi.it.device.SmartDevice$1.onLoad(SmartDevice.java:42) ~[classes/:?]
+	at org.eclipse.californium.core.CoapClient$ObserveMessageObserverImpl.deliver(CoapClient.java:1147) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.succeeded(CoapClient.java:1075) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.onResponse(CoapClient.java:1054) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.coap.Request.setResponse(Request.java:546) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.EndpointManager$ClientMessageDeliverer.deliverResponse(EndpointManager.java:419) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack$StackTopAdapter.receiveResponse(BaseCoapStack.java:175) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ObserveLayer.receiveResponse(ObserveLayer.java:155) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BlockwiseLayer.receiveResponse(BlockwiseLayer.java:395) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ReliabilityLayer.receiveResponse(ReliabilityLayer.java:243) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack.receiveResponse(BaseCoapStack.java:103) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveResponse(CoapEndpoint.java:758) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveMessage(CoapEndpoint.java:669) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.access$800(CoapEndpoint.java:628) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl$1.run(CoapEndpoint.java:642) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$5.run(CoapEndpoint.java:804) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_342]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_342]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_342]
+2022-08-31 09:52:34,831 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] WARN  iot.unipi.it.device.SmartDevice - Message destination incorrect!
+2022-08-31 09:53:37,440 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 09:53:59,111 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 09:53:59,209 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - Impossible to parse the response!
+org.json.simple.parser.ParseException: null
+	at org.json.simple.parser.Yylex.yylex(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.nextToken(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.JSONValue.parseWithException(Unknown Source) ~[json-simple-1.1.jar:?]
+	at iot.unipi.it.device.SmartDevice$1.onLoad(SmartDevice.java:42) ~[classes/:?]
+	at org.eclipse.californium.core.CoapClient$ObserveMessageObserverImpl.deliver(CoapClient.java:1147) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.succeeded(CoapClient.java:1075) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.onResponse(CoapClient.java:1054) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.coap.Request.setResponse(Request.java:546) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.EndpointManager$ClientMessageDeliverer.deliverResponse(EndpointManager.java:419) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack$StackTopAdapter.receiveResponse(BaseCoapStack.java:175) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ObserveLayer.receiveResponse(ObserveLayer.java:155) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BlockwiseLayer.receiveResponse(BlockwiseLayer.java:395) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ReliabilityLayer.receiveResponse(ReliabilityLayer.java:243) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack.receiveResponse(BaseCoapStack.java:103) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveResponse(CoapEndpoint.java:758) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveMessage(CoapEndpoint.java:669) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.access$800(CoapEndpoint.java:628) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl$1.run(CoapEndpoint.java:642) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$5.run(CoapEndpoint.java:804) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_342]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_342]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_342]
+2022-08-31 09:53:59,246 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] WARN  iot.unipi.it.device.SmartDevice - Message destination incorrect!
+2022-08-31 09:54:03,150 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - Impossible to parse the response!
+org.json.simple.parser.ParseException: null
+	at org.json.simple.parser.Yylex.yylex(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.nextToken(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.JSONValue.parseWithException(Unknown Source) ~[json-simple-1.1.jar:?]
+	at iot.unipi.it.device.SmartDevice$1.onLoad(SmartDevice.java:42) ~[classes/:?]
+	at org.eclipse.californium.core.CoapClient$ObserveMessageObserverImpl.deliver(CoapClient.java:1147) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.succeeded(CoapClient.java:1075) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.onResponse(CoapClient.java:1054) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.coap.Request.setResponse(Request.java:546) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.EndpointManager$ClientMessageDeliverer.deliverResponse(EndpointManager.java:419) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack$StackTopAdapter.receiveResponse(BaseCoapStack.java:175) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ObserveLayer.receiveResponse(ObserveLayer.java:155) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BlockwiseLayer.receiveResponse(BlockwiseLayer.java:395) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ReliabilityLayer.receiveResponse(ReliabilityLayer.java:243) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack.receiveResponse(BaseCoapStack.java:103) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveResponse(CoapEndpoint.java:758) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveMessage(CoapEndpoint.java:669) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.access$800(CoapEndpoint.java:628) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl$1.run(CoapEndpoint.java:642) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$5.run(CoapEndpoint.java:804) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_342]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_342]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_342]
+2022-08-31 09:54:03,154 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] WARN  iot.unipi.it.device.SmartDevice - Message destination incorrect!
+2022-08-31 09:54:18,139 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 09:55:13,612 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 09:55:55,479 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 10:40:42,805 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 10:42:08,538 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 10:42:08,608 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - Impossible to parse the response!
+org.json.simple.parser.ParseException: null
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.JSONValue.parseWithException(Unknown Source) ~[json-simple-1.1.jar:?]
+	at iot.unipi.it.device.SmartDevice$1.onLoad(SmartDevice.java:47) ~[classes/:?]
+	at org.eclipse.californium.core.CoapClient$ObserveMessageObserverImpl.deliver(CoapClient.java:1147) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.succeeded(CoapClient.java:1075) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.onResponse(CoapClient.java:1054) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.coap.Request.setResponse(Request.java:546) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.EndpointManager$ClientMessageDeliverer.deliverResponse(EndpointManager.java:419) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack$StackTopAdapter.receiveResponse(BaseCoapStack.java:175) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ObserveLayer.receiveResponse(ObserveLayer.java:155) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BlockwiseLayer.receiveResponse(BlockwiseLayer.java:395) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ReliabilityLayer.receiveResponse(ReliabilityLayer.java:243) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack.receiveResponse(BaseCoapStack.java:103) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveResponse(CoapEndpoint.java:758) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveMessage(CoapEndpoint.java:669) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.access$800(CoapEndpoint.java:628) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl$1.run(CoapEndpoint.java:642) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$5.run(CoapEndpoint.java:804) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_342]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_342]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_342]
+2022-08-31 10:42:08,653 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] WARN  iot.unipi.it.device.SmartDevice - Message destination incorrect!
+2022-08-31 10:47:36,181 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 10:48:48,116 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 10:50:48,741 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 10:50:59,588 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 10:52:54,665 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 10:53:19,492 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 10:53:19,570 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - Impossible to parse the response!
+org.json.simple.parser.ParseException: null
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.JSONValue.parseWithException(Unknown Source) ~[json-simple-1.1.jar:?]
+	at iot.unipi.it.device.SmartDevice$1.onLoad(SmartDevice.java:47) ~[classes/:?]
+	at org.eclipse.californium.core.CoapClient$ObserveMessageObserverImpl.deliver(CoapClient.java:1147) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.succeeded(CoapClient.java:1075) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.onResponse(CoapClient.java:1054) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.coap.Request.setResponse(Request.java:546) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.EndpointManager$ClientMessageDeliverer.deliverResponse(EndpointManager.java:419) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack$StackTopAdapter.receiveResponse(BaseCoapStack.java:175) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ObserveLayer.receiveResponse(ObserveLayer.java:155) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BlockwiseLayer.receiveResponse(BlockwiseLayer.java:395) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ReliabilityLayer.receiveResponse(ReliabilityLayer.java:243) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack.receiveResponse(BaseCoapStack.java:103) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveResponse(CoapEndpoint.java:758) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveMessage(CoapEndpoint.java:669) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.access$800(CoapEndpoint.java:628) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl$1.run(CoapEndpoint.java:642) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$5.run(CoapEndpoint.java:804) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_342]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_342]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_342]
+2022-08-31 10:54:10,594 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 10:54:27,234 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 10:57:07,889 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - OBSERVING FAILED with node fd00:0:0:0:202:2:2:2
+2022-08-31 11:01:07,802 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 11:01:27,137 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 11:05:23,064 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - OBSERVING FAILED with node fd00:0:0:0:202:2:2:2
+2022-08-31 11:06:41,858 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 11:07:20,635 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 11:07:20,706 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - Impossible to parse the response!
+org.json.simple.parser.ParseException: null
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.JSONValue.parseWithException(Unknown Source) ~[json-simple-1.1.jar:?]
+	at iot.unipi.it.device.SmartDevice$1.onLoad(SmartDevice.java:48) ~[classes/:?]
+	at org.eclipse.californium.core.CoapClient$ObserveMessageObserverImpl.deliver(CoapClient.java:1147) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.succeeded(CoapClient.java:1075) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.onResponse(CoapClient.java:1054) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.coap.Request.setResponse(Request.java:546) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.EndpointManager$ClientMessageDeliverer.deliverResponse(EndpointManager.java:419) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack$StackTopAdapter.receiveResponse(BaseCoapStack.java:175) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ObserveLayer.receiveResponse(ObserveLayer.java:155) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BlockwiseLayer.receiveResponse(BlockwiseLayer.java:395) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ReliabilityLayer.receiveResponse(ReliabilityLayer.java:243) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack.receiveResponse(BaseCoapStack.java:103) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveResponse(CoapEndpoint.java:758) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveMessage(CoapEndpoint.java:669) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.access$800(CoapEndpoint.java:628) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl$1.run(CoapEndpoint.java:642) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$5.run(CoapEndpoint.java:804) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_342]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_342]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_342]
+2022-08-31 11:07:49,408 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 11:08:16,615 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 11:10:16,037 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 11:10:31,074 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 11:10:31,103 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - Impossible to parse the response!
+org.json.simple.parser.ParseException: null
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.JSONValue.parseWithException(Unknown Source) ~[json-simple-1.1.jar:?]
+	at iot.unipi.it.device.SmartDevice$1.onLoad(SmartDevice.java:48) ~[classes/:?]
+	at org.eclipse.californium.core.CoapClient$ObserveMessageObserverImpl.deliver(CoapClient.java:1147) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.succeeded(CoapClient.java:1075) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.onResponse(CoapClient.java:1054) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.coap.Request.setResponse(Request.java:546) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.EndpointManager$ClientMessageDeliverer.deliverResponse(EndpointManager.java:419) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack$StackTopAdapter.receiveResponse(BaseCoapStack.java:175) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ObserveLayer.receiveResponse(ObserveLayer.java:155) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BlockwiseLayer.receiveResponse(BlockwiseLayer.java:395) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ReliabilityLayer.receiveResponse(ReliabilityLayer.java:243) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack.receiveResponse(BaseCoapStack.java:103) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveResponse(CoapEndpoint.java:758) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveMessage(CoapEndpoint.java:669) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.access$800(CoapEndpoint.java:628) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl$1.run(CoapEndpoint.java:642) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$5.run(CoapEndpoint.java:804) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_342]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_342]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_342]
+2022-08-31 11:11:29,612 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 11:12:05,171 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 11:15:45,292 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - OBSERVING FAILED with node fd00:0:0:0:202:2:2:2
+2022-08-31 11:20:47,257 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 11:21:20,730 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 11:25:56,831 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - OBSERVING FAILED with node fd00:0:0:0:202:2:2:2
+2022-08-31 11:27:29,953 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 11:27:58,623 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 11:27:58,662 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - Impossible to parse the response!
+org.json.simple.parser.ParseException: null
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.JSONValue.parseWithException(Unknown Source) ~[json-simple-1.1.jar:?]
+	at iot.unipi.it.device.SmartDevice$1.onLoad(SmartDevice.java:48) ~[classes/:?]
+	at org.eclipse.californium.core.CoapClient$ObserveMessageObserverImpl.deliver(CoapClient.java:1147) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.succeeded(CoapClient.java:1075) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.onResponse(CoapClient.java:1054) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.coap.Request.setResponse(Request.java:546) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.EndpointManager$ClientMessageDeliverer.deliverResponse(EndpointManager.java:419) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack$StackTopAdapter.receiveResponse(BaseCoapStack.java:175) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ObserveLayer.receiveResponse(ObserveLayer.java:155) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BlockwiseLayer.receiveResponse(BlockwiseLayer.java:395) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ReliabilityLayer.receiveResponse(ReliabilityLayer.java:243) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack.receiveResponse(BaseCoapStack.java:103) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveResponse(CoapEndpoint.java:758) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveMessage(CoapEndpoint.java:669) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.access$800(CoapEndpoint.java:628) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl$1.run(CoapEndpoint.java:642) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$5.run(CoapEndpoint.java:804) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_342]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_342]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_342]
+2022-08-31 11:28:18,518 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 11:28:38,585 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 11:28:38,704 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher!
+2022-08-31 11:29:18,724 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher!
+2022-08-31 11:29:42,730 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher!
+2022-08-31 11:29:50,745 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher!
+2022-08-31 11:29:58,773 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher!
+2022-08-31 11:30:30,876 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher!
+2022-08-31 11:30:47,004 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher!
+2022-08-31 11:31:11,082 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher!
+2022-08-31 11:31:27,116 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher!
+2022-08-31 11:31:59,330 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher!
+2022-08-31 11:32:15,388 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher!
+2022-08-31 11:32:23,371 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher!
+2022-08-31 11:32:47,533 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher!
+2022-08-31 11:33:03,547 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher!
+2022-08-31 11:33:53,758 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 11:34:24,307 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 11:34:24,444 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher!
+2022-08-31 11:35:12,456 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher!
+2022-08-31 11:35:49,853 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 11:36:36,104 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 11:37:30,163 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher!
+2022-08-31 11:37:34,174 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 11:37:42,186 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 11:37:46,204 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 11:37:50,200 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 11:37:54,216 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 11:38:06,207 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 11:38:10,229 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 11:38:14,238 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 11:38:22,238 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 11:38:34,247 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 11:38:42,274 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 11:38:58,305 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 11:39:06,349 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 11:39:10,407 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 11:39:14,382 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 11:39:22,415 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 11:39:26,413 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 11:39:30,421 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 11:39:45,821 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 11:40:11,977 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 11:40:56,175 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher!
+2022-08-31 11:41:00,141 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 11:46:19,063 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 11:46:39,070 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 11:46:39,120 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - Impossible to parse the response!
+org.json.simple.parser.ParseException: null
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.parser.JSONParser.parse(Unknown Source) ~[json-simple-1.1.jar:?]
+	at org.json.simple.JSONValue.parseWithException(Unknown Source) ~[json-simple-1.1.jar:?]
+	at iot.unipi.it.device.SmartDevice$1.onLoad(SmartDevice.java:48) ~[classes/:?]
+	at org.eclipse.californium.core.CoapClient$ObserveMessageObserverImpl.deliver(CoapClient.java:1147) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.succeeded(CoapClient.java:1075) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.CoapClient$MessageObserverImpl.onResponse(CoapClient.java:1054) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.coap.Request.setResponse(Request.java:546) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.EndpointManager$ClientMessageDeliverer.deliverResponse(EndpointManager.java:419) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack$StackTopAdapter.receiveResponse(BaseCoapStack.java:175) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ObserveLayer.receiveResponse(ObserveLayer.java:155) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BlockwiseLayer.receiveResponse(BlockwiseLayer.java:395) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ReliabilityLayer.receiveResponse(ReliabilityLayer.java:243) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveResponse(AbstractLayer.java:85) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack.receiveResponse(BaseCoapStack.java:103) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveResponse(CoapEndpoint.java:758) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveMessage(CoapEndpoint.java:669) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.access$800(CoapEndpoint.java:628) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl$1.run(CoapEndpoint.java:642) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$5.run(CoapEndpoint.java:804) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_342]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_342]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_342]
+2022-08-31 11:47:36,255 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 11:47:58,111 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 11:49:02,333 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher than normal!
+2022-08-31 11:49:06,330 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 12:07:56,980 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 12:07:58,381 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 12:07:58,389 [CoapServer#2] ERROR iot.unipi.it.services.TelemetryDBService - Error in the insert sensor query! 
+java.sql.SQLIntegrityConstraintViolationException: Duplicate entry 'fd00:0:0:0:202:2:2:2' for key 'PRIMARY'
+	at com.mysql.cj.jdbc.exceptions.SQLError.createSQLException(SQLError.java:117) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:122) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeInternal(ClientPreparedStatement.java:953) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1092) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdateInternal(ClientPreparedStatement.java:1040) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeLargeUpdate(ClientPreparedStatement.java:1348) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ClientPreparedStatement.executeUpdate(ClientPreparedStatement.java:1025) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at iot.unipi.it.services.TelemetryDBService.addSensor(TelemetryDBService.java:77) ~[classes/:?]
+	at iot.unipi.it.services.resources.ResRegistration.handlePOST(ResRegistration.java:34) ~[classes/:?]
+	at org.eclipse.californium.core.CoapResource.handleRequest(CoapResource.java:217) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.server.ServerMessageDeliverer.deliverRequest(ServerMessageDeliverer.java:105) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack$StackTopAdapter.receiveRequest(BaseCoapStack.java:162) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveRequest(AbstractLayer.java:80) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveRequest(AbstractLayer.java:80) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BlockwiseLayer.receiveRequest(BlockwiseLayer.java:237) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.ReliabilityLayer.receiveRequest(ReliabilityLayer.java:218) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.AbstractLayer.receiveRequest(AbstractLayer.java:80) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.stack.BaseCoapStack.receiveRequest(BaseCoapStack.java:97) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveRequest(CoapEndpoint.java:736) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.receiveMessage(CoapEndpoint.java:665) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl.access$800(CoapEndpoint.java:628) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$InboxImpl$1.run(CoapEndpoint.java:642) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at org.eclipse.californium.core.network.CoapEndpoint$5.run(CoapEndpoint.java:804) ~[californium-core-1.1.0-SNAPSHOT.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_342]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_342]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_342]
+2022-08-31 12:07:58,450 [CoapServer#2] ERROR iot.unipi.it.device.SmartDevice - Impossible to add new device!
+2022-08-31 12:09:02,141 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 12:09:09,736 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 12:10:01,786 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher than normal!
+2022-08-31 12:10:05,798 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 12:12:28,255 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - OBSERVING FAILED with node fd00:0:0:0:202:2:2:2
+2022-08-31 12:24:58,796 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 12:26:10,876 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 12:27:05,835 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 12:27:36,235 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 12:41:14,997 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 12:41:36,469 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 12:43:31,142 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher than normal!
+2022-08-31 12:43:43,177 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher than normal!
+2022-08-31 12:43:51,222 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 12:46:59,750 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 12:47:14,749 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 12:49:17,155 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 12:49:45,777 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 12:51:23,931 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher than normal!
+2022-08-31 12:51:27,970 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 12:51:47,991 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher than normal!
+2022-08-31 12:51:52,031 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 12:52:00,030 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher than normal!
+2022-08-31 12:52:49,552 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 12:53:49,144 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 12:54:51,237 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher than normal!
+2022-08-31 12:55:15,287 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 12:55:27,331 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher than normal!
+2022-08-31 12:55:35,329 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 13:35:46,404 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-08-31 13:36:21,177 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered
+2022-08-31 13:37:18,806 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is higher than normal!
+2022-08-31 13:37:34,837 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] the level of glucose is too high!
+2022-08-31 13:39:44,680 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - OBSERVING FAILED with node fd00:0:0:0:202:2:2:2
