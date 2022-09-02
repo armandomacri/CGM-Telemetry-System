@@ -1,0 +1,400 @@
+2022-09-02 06:30:16,423 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-02 06:30:16,910 [main] ERROR iot.unipi.it.services.TelemetryDBService - MySQL Connection Failed! 
+com.mysql.cj.jdbc.exceptions.CommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at com.mysql.cj.jdbc.exceptions.SQLError.createCommunicationsException(SQLError.java:174) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.exceptions.SQLExceptionsMapping.translateException(SQLExceptionsMapping.java:64) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:833) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.<init>(ConnectionImpl.java:453) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.getInstance(ConnectionImpl.java:246) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.NonRegisteringDriver.connect(NonRegisteringDriver.java:198) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at java.sql.DriverManager.getConnection(DriverManager.java:664) ~[?:1.8.0_242]
+	at java.sql.DriverManager.getConnection(DriverManager.java:247) ~[?:1.8.0_242]
+	at iot.unipi.it.services.TelemetryDBService.getConnection(TelemetryDBService.java:39) ~[classes/:?]
+	at iot.unipi.it.services.TelemetryDBService.cleanDB(TelemetryDBService.java:57) ~[classes/:?]
+	at iot.unipi.it.Collector.main(Collector.java:17) ~[classes/:?]
+Caused by: com.mysql.cj.exceptions.CJCommunicationsException: Communications link failure
+
+The last packet sent successfully to the server was 0 milliseconds ago. The driver has not received any packets from the server.
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method) ~[?:1.8.0_242]
+	at sun.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:62) ~[?:1.8.0_242]
+	at sun.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45) ~[?:1.8.0_242]
+	at java.lang.reflect.Constructor.newInstance(Constructor.java:423) ~[?:1.8.0_242]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:61) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:105) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.exceptions.ExceptionFactory.createException(ExceptionFactory.java:151) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.exceptions.ExceptionFactory.createCommunicationsException(ExceptionFactory.java:167) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:89) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:953) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:823) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	... 8 more
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_242]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_242]
+	at java.net.Socket.connect(Socket.java:607) ~[?:1.8.0_242]
+	at com.mysql.cj.protocol.StandardSocketFactory.connect(StandardSocketFactory.java:155) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.protocol.a.NativeSocketConnection.connect(NativeSocketConnection.java:63) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.NativeSession.connect(NativeSession.java:144) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.connectOneTryOnly(ConnectionImpl.java:953) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	at com.mysql.cj.jdbc.ConnectionImpl.createNewIO(ConnectionImpl.java:823) ~[mysql-connector-java-8.0.25.jar:8.0.25]
+	... 8 more
+2022-09-02 06:31:27,037 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-02 12:21:10,700 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.device.SmartDevice - Connection is broken!
+2022-09-02 12:21:10,709 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Trying to reconnect in 3 seconds.
+2022-09-02 12:21:10,709 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.device.SmartDevice - Something wrong with thread sleep!
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method) ~[?:1.8.0_242]
+	at iot.unipi.it.services.CollectorMQTT.connectionLost(CollectorMQTT.java:68) ~[classes/:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.connectionLost(CommsCallback.java:292) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:423) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:181) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+2022-09-02 12:21:10,726 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Trying to reconnect in 3 seconds.
+2022-09-02 12:21:13,727 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Reconnecting ...
+2022-09-02 12:21:13,752 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.device.SmartDevice - CollectorMQTT unable to connect
+org.eclipse.paho.client.mqttv3.MqttPersistenceException: MqttException
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.restoreBackups(MqttDefaultFilePersistence.java:276) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.open(MqttDefaultFilePersistence.java:126) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ConnectActionListener.connect(ConnectActionListener.java:174) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ConnectActionListener.onFailure(ConnectActionListener.java:137) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.fireActionEvent(CommsCallback.java:326) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.handleActionComplete(CommsCallback.java:260) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.asyncOperationComplete(CommsCallback.java:445) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:418) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:170) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+2022-09-02 12:21:13,758 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Trying to reconnect in 6 seconds.
+2022-09-02 12:21:13,744 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.device.SmartDevice - Connection is broken!
+2022-09-02 12:21:13,759 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Trying to reconnect in 3 seconds.
+2022-09-02 12:21:13,759 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.device.SmartDevice - Something wrong with thread sleep!
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method) ~[?:1.8.0_242]
+	at iot.unipi.it.services.CollectorMQTT.connectionLost(CollectorMQTT.java:68) ~[classes/:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.connectionLost(CommsCallback.java:292) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:423) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:181) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+2022-09-02 12:21:13,790 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Trying to reconnect in 3 seconds.
+2022-09-02 12:21:16,791 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Reconnecting ...
+2022-09-02 12:21:16,807 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Connection is restored
+2022-09-02 12:21:19,758 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Reconnecting ...
+2022-09-02 12:21:19,791 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.device.SmartDevice - Connection is broken!
+2022-09-02 12:21:19,791 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Trying to reconnect in 3 seconds.
+2022-09-02 12:21:19,792 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.device.SmartDevice - Something wrong with thread sleep!
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method) ~[?:1.8.0_242]
+	at iot.unipi.it.services.CollectorMQTT.connectionLost(CollectorMQTT.java:68) ~[classes/:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.connectionLost(CommsCallback.java:292) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:423) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:181) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+2022-09-02 12:21:19,794 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Trying to reconnect in 3 seconds.
+2022-09-02 12:21:19,793 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.device.SmartDevice - CollectorMQTT unable to connect
+org.eclipse.paho.client.mqttv3.MqttPersistenceException: MqttException
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.restoreBackups(MqttDefaultFilePersistence.java:276) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.open(MqttDefaultFilePersistence.java:126) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ConnectActionListener.connect(ConnectActionListener.java:174) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ConnectActionListener.onFailure(ConnectActionListener.java:137) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.fireActionEvent(CommsCallback.java:326) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.handleActionComplete(CommsCallback.java:260) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.asyncOperationComplete(CommsCallback.java:445) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:418) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:170) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+2022-09-02 12:21:19,803 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Trying to reconnect in 12 seconds.
+2022-09-02 12:21:22,795 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Reconnecting ...
+2022-09-02 12:21:22,796 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.device.SmartDevice - CollectorMQTT unable to connect
+org.eclipse.paho.client.mqttv3.MqttPersistenceException: MqttException
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.restoreBackups(MqttDefaultFilePersistence.java:276) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.open(MqttDefaultFilePersistence.java:126) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ConnectActionListener.connect(ConnectActionListener.java:174) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.connect(MqttAsyncClient.java:774) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.MqttClient.connect(MqttClient.java:333) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.MqttClient.connect(MqttClient.java:326) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at iot.unipi.it.services.CollectorMQTT.connectionLost(CollectorMQTT.java:71) ~[classes/:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.connectionLost(CommsCallback.java:292) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:423) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:181) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+2022-09-02 12:21:22,802 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Trying to reconnect in 6 seconds.
+2022-09-02 12:21:28,802 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Reconnecting ...
+2022-09-02 12:21:28,803 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.device.SmartDevice - CollectorMQTT unable to connect
+org.eclipse.paho.client.mqttv3.MqttPersistenceException: MqttException
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.restoreBackups(MqttDefaultFilePersistence.java:276) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.open(MqttDefaultFilePersistence.java:126) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ConnectActionListener.connect(ConnectActionListener.java:174) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.connect(MqttAsyncClient.java:774) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.MqttClient.connect(MqttClient.java:333) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.MqttClient.connect(MqttClient.java:326) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at iot.unipi.it.services.CollectorMQTT.connectionLost(CollectorMQTT.java:71) ~[classes/:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.connectionLost(CommsCallback.java:292) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:423) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:181) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+2022-09-02 12:21:28,806 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Trying to reconnect in 12 seconds.
+2022-09-02 12:21:31,804 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Reconnecting ...
+2022-09-02 12:21:31,806 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.device.SmartDevice - CollectorMQTT unable to connect
+org.eclipse.paho.client.mqttv3.MqttPersistenceException: MqttException
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.restoreBackups(MqttDefaultFilePersistence.java:276) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.open(MqttDefaultFilePersistence.java:126) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ConnectActionListener.connect(ConnectActionListener.java:174) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.connect(MqttAsyncClient.java:774) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.MqttClient.connect(MqttClient.java:333) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.MqttClient.connect(MqttClient.java:326) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at iot.unipi.it.services.CollectorMQTT.connectionLost(CollectorMQTT.java:71) ~[classes/:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.connectionLost(CommsCallback.java:292) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:423) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:181) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+2022-09-02 12:21:31,811 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Trying to reconnect in 24 seconds.
+2022-09-02 12:21:40,807 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Reconnecting ...
+2022-09-02 12:21:40,808 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.device.SmartDevice - CollectorMQTT unable to connect
+org.eclipse.paho.client.mqttv3.MqttPersistenceException: MqttException
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.restoreBackups(MqttDefaultFilePersistence.java:276) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.open(MqttDefaultFilePersistence.java:126) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ConnectActionListener.connect(ConnectActionListener.java:174) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.connect(MqttAsyncClient.java:774) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.MqttClient.connect(MqttClient.java:333) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.MqttClient.connect(MqttClient.java:326) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at iot.unipi.it.services.CollectorMQTT.connectionLost(CollectorMQTT.java:71) ~[classes/:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.connectionLost(CommsCallback.java:292) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:423) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:181) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+2022-09-02 12:21:40,810 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Trying to reconnect in 24 seconds.
+2022-09-02 12:21:55,812 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Reconnecting ...
+2022-09-02 12:21:55,813 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.device.SmartDevice - CollectorMQTT unable to connect
+org.eclipse.paho.client.mqttv3.MqttPersistenceException: MqttException
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.restoreBackups(MqttDefaultFilePersistence.java:276) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.open(MqttDefaultFilePersistence.java:126) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ConnectActionListener.connect(ConnectActionListener.java:174) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.connect(MqttAsyncClient.java:774) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.MqttClient.connect(MqttClient.java:333) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.MqttClient.connect(MqttClient.java:326) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at iot.unipi.it.services.CollectorMQTT.connectionLost(CollectorMQTT.java:71) ~[classes/:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.connectionLost(CommsCallback.java:292) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:423) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:181) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+2022-09-02 12:21:55,815 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Trying to reconnect in 48 seconds.
+2022-09-02 12:22:04,811 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Reconnecting ...
+2022-09-02 12:22:04,812 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.device.SmartDevice - CollectorMQTT unable to connect
+org.eclipse.paho.client.mqttv3.MqttPersistenceException: MqttException
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.restoreBackups(MqttDefaultFilePersistence.java:276) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.open(MqttDefaultFilePersistence.java:126) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ConnectActionListener.connect(ConnectActionListener.java:174) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.MqttAsyncClient.connect(MqttAsyncClient.java:774) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.MqttClient.connect(MqttClient.java:333) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.MqttClient.connect(MqttClient.java:326) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at iot.unipi.it.services.CollectorMQTT.connectionLost(CollectorMQTT.java:71) ~[classes/:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.connectionLost(CommsCallback.java:292) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:423) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:181) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+2022-09-02 12:22:04,814 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Trying to reconnect in 48 seconds.
+2022-09-02 12:22:29,128 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-02 12:22:52,815 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Reconnecting ...
+2022-09-02 12:22:52,841 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Connection is restored
+2022-09-02 12:24:47,278 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-02 12:31:02,592 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-02 12:33:43,248 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-02 12:33:43,651 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 83, "timestamp": 261}
+2022-09-02 12:33:44,149 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 84, "timestamp": 262}
+2022-09-02 12:33:47,653 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 85, "timestamp": 265}
+2022-09-02 12:33:48,150 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 86, "timestamp": 266}
+2022-09-02 12:33:51,637 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 87, "timestamp": 269}
+2022-09-02 12:33:52,145 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 88, "timestamp": 270}
+2022-09-02 12:33:56,701 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 89, "timestamp": 274}
+2022-09-02 12:33:57,197 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 90, "timestamp": 275}
+2022-09-02 12:33:58,157 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 89, "timestamp": 276}
+2022-09-02 12:33:58,665 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 88, "timestamp": 276}
+2022-09-02 12:34:00,669 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 87, "timestamp": 278}
+2022-09-02 12:34:04,185 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 86, "timestamp": 282}
+2022-09-02 12:34:04,685 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 85, "timestamp": 282}
+2022-09-02 12:34:06,153 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 84, "timestamp": 284}
+2022-09-02 12:34:06,649 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 83, "timestamp": 284}
+2022-09-02 12:34:16,188 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 84, "timestamp": 294}
+2022-09-02 12:34:16,689 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 85, "timestamp": 294}
+2022-09-02 12:34:18,201 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 86, "timestamp": 296}
+2022-09-02 12:34:18,693 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 87, "timestamp": 296}
+2022-09-02 12:34:27,193 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 86, "timestamp": 305}
+2022-09-02 12:34:27,705 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 85, "timestamp": 305}
+2022-09-02 12:34:28,165 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 86, "timestamp": 306}
+2022-09-02 12:34:28,670 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 87, "timestamp": 306}
+2022-09-02 12:34:32,212 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 88, "timestamp": 310}
+2022-09-02 12:34:32,706 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 89, "timestamp": 310}
+2022-09-02 12:34:48,161 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 90, "timestamp": 326}
+2022-09-02 12:34:48,653 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 91, "timestamp": 326}
+2022-09-02 12:34:52,209 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 90, "timestamp": 330}
+2022-09-02 12:34:52,705 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 89, "timestamp": 330}
+2022-09-02 12:34:54,201 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 90, "timestamp": 332}
+2022-09-02 12:34:54,698 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 91, "timestamp": 332}
+2022-09-02 12:34:59,181 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 90, "timestamp": 337}
+2022-09-02 12:34:59,681 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 89, "timestamp": 337}
+2022-09-02 12:35:00,217 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 88, "timestamp": 338}
+2022-09-02 12:35:00,717 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 87, "timestamp": 338}
+2022-09-02 12:35:03,197 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 86, "timestamp": 341}
+2022-09-02 12:35:03,705 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 85, "timestamp": 341}
+2022-09-02 12:35:08,189 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 86, "timestamp": 346}
+2022-09-02 12:35:08,693 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 87, "timestamp": 346}
+2022-09-02 12:35:09,194 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 86, "timestamp": 347}
+2022-09-02 12:35:09,695 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 85, "timestamp": 347}
+2022-09-02 12:35:12,209 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 86, "timestamp": 350}
+2022-09-02 12:35:12,707 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 87, "timestamp": 350}
+2022-09-02 12:35:14,193 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 88, "timestamp": 352}
+2022-09-02 12:35:14,693 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 89, "timestamp": 352}
+2022-09-02 12:35:20,179 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 90, "timestamp": 358}
+2022-09-02 12:35:20,681 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 91, "timestamp": 358}
+2022-09-02 12:35:21,177 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 90, "timestamp": 359}
+2022-09-02 12:35:21,673 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 89, "timestamp": 359}
+2022-09-02 12:35:25,185 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 90, "timestamp": 363}
+2022-09-02 12:35:25,689 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 91, "timestamp": 363}
+2022-09-02 12:35:28,205 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 92, "timestamp": 366}
+2022-09-02 12:35:28,705 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 93, "timestamp": 366}
+2022-09-02 12:35:29,181 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 94, "timestamp": 367}
+2022-09-02 12:35:29,684 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 95, "timestamp": 367}
+2022-09-02 12:35:30,245 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 96, "timestamp": 368}
+2022-09-02 12:35:30,741 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 97, "timestamp": 368}
+2022-09-02 12:35:33,193 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 98, "timestamp": 371}
+2022-09-02 12:35:33,689 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 99, "timestamp": 371}
+2022-09-02 12:35:37,165 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 98, "timestamp": 375}
+2022-09-02 12:35:37,665 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 97, "timestamp": 375}
+2022-09-02 12:35:49,205 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 98, "timestamp": 387}
+2022-09-02 12:35:49,733 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 99, "timestamp": 387}
+2022-09-02 12:35:52,189 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 100, "timestamp": 390}
+2022-09-02 12:35:52,200 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - MQTT published!
+2022-09-02 12:35:52,200 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-02 12:35:52,205 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Delievery Completed
+2022-09-02 12:35:52,648 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 101, "timestamp": 390}
+2022-09-02 12:35:54,185 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 100, "timestamp": 392}
+2022-09-02 12:35:54,689 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 99, "timestamp": 392}
+2022-09-02 12:35:54,704 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - MQTT published!
+2022-09-02 12:35:54,705 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - [NORMAL] - 2 - the level of glucose is normal!
+2022-09-02 12:35:54,706 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Delievery Completed
+2022-09-02 12:35:57,140 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 100, "timestamp": 395}
+2022-09-02 12:35:57,145 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - MQTT published!
+2022-09-02 12:35:57,146 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-02 12:35:57,146 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Delievery Completed
+2022-09-02 12:35:57,637 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 101, "timestamp": 395}
+2022-09-02 12:36:01,209 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 100, "timestamp": 399}
+2022-09-02 12:36:01,710 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 99, "timestamp": 399}
+2022-09-02 12:36:01,722 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - MQTT published!
+2022-09-02 12:36:01,723 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - [NORMAL] - 2 - the level of glucose is normal!
+2022-09-02 12:36:01,724 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Delievery Completed
+2022-09-02 12:36:09,176 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 100, "timestamp": 407}
+2022-09-02 12:36:09,185 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - MQTT published!
+2022-09-02 12:36:09,195 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-02 12:36:09,196 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Delievery Completed
+2022-09-02 12:36:09,673 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 101, "timestamp": 407}
+2022-09-02 12:36:16,219 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 100, "timestamp": 414}
+2022-09-02 12:36:16,710 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 99, "timestamp": 414}
+2022-09-02 12:36:16,715 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - MQTT published!
+2022-09-02 12:36:16,716 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - [NORMAL] - 2 - the level of glucose is normal!
+2022-09-02 12:36:16,717 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Delievery Completed
+2022-09-02 12:36:22,189 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 100, "timestamp": 420}
+2022-09-02 12:36:22,192 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - MQTT published!
+2022-09-02 12:36:22,192 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-02 12:36:22,192 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Delievery Completed
+2022-09-02 12:36:22,663 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 101, "timestamp": 420}
+2022-09-02 12:36:24,217 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 100, "timestamp": 422}
+2022-09-02 12:36:24,709 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 99, "timestamp": 422}
+2022-09-02 12:36:24,721 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - MQTT published!
+2022-09-02 12:36:24,721 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - [NORMAL] - 2 - the level of glucose is normal!
+2022-09-02 12:36:24,722 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Delievery Completed
+2022-09-02 12:36:28,174 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 100, "timestamp": 426}
+2022-09-02 12:36:28,179 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - MQTT published!
+2022-09-02 12:36:28,179 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-02 12:36:28,179 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Delievery Completed
+2022-09-02 12:36:28,672 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 101, "timestamp": 426}
+2022-09-02 12:36:29,242 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 100, "timestamp": 427}
+2022-09-02 12:36:29,742 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 99, "timestamp": 427}
+2022-09-02 12:36:29,748 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - MQTT published!
+2022-09-02 12:36:29,748 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - [NORMAL] - 2 - the level of glucose is normal!
+2022-09-02 12:36:29,748 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Delievery Completed
+2022-09-02 12:36:31,170 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 98, "timestamp": 429}
+2022-09-02 12:36:31,705 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 97, "timestamp": 429}
+2022-09-02 12:36:33,245 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 96, "timestamp": 431}
+2022-09-02 12:36:33,741 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 95, "timestamp": 431}
+2022-09-02 12:36:34,229 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 94, "timestamp": 432}
+2022-09-02 12:36:34,729 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 93, "timestamp": 432}
+2022-09-02 12:36:41,233 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 92, "timestamp": 439}
+2022-09-02 12:36:41,729 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 91, "timestamp": 439}
+2022-09-02 12:36:44,229 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 90, "timestamp": 442}
+2022-09-02 12:36:44,725 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 89, "timestamp": 442}
+2022-09-02 12:36:45,254 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 90, "timestamp": 443}
+2022-09-02 12:36:45,749 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 91, "timestamp": 443}
+2022-09-02 12:36:47,249 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 90, "timestamp": 445}
+2022-09-02 12:36:47,745 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 89, "timestamp": 445}
+2022-09-02 12:36:49,295 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 88, "timestamp": 447}
+2022-09-02 12:36:49,797 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 87, "timestamp": 447}
