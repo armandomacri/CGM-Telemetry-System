@@ -128,6 +128,7 @@ PROCESS_THREAD(glucose_server, ev, data)
         
         if (ev == PROCESS_EVENT_TIMER && data == &simulation) {
             res_glucose.trigger();
+            LOG_DBG("RISORSA TRIGGHERATA\n");
             etimer_set(&simulation, CLOCK_SECOND * SIMULATION_INTERVAL);
         }
     }

@@ -84,9 +84,6 @@ static void res_get_handler(coap_message_t *request, coap_message_t *response, u
         sprintf((char *)buffer, "Supported content-types:application/json");
 	    coap_set_payload(response, buffer, strlen((char*)buffer));
 	}
-
-    
-
 }
 
 static void res_put_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset)
@@ -139,7 +136,6 @@ static void res_event_handler(void)
 
     int new_glu = glucose;
     int random = rand() % 8; // generate 0, 1, 2, 3, 4, 5, 6, 7
-
 
     if (random <4) {// 50% of changing the value
         if (random == 0) // decrease

@@ -16,6 +16,7 @@ import org.json.simple.parser.ParseException;
 
 import iot.unipi.it.services.RegistrationService;
 import iot.unipi.it.services.TelemetryDBService;
+import iot.unipi.it.services.resources.ResRegistration;
 
 public class SmartDevice{
 	private static int LOWER_BOUND_GLU = 92;
@@ -82,7 +83,7 @@ public class SmartDevice{
 								req.setPayload(payload);
 	                        	req.setURI("coap://[" + ip + "]/alarm?color=y");
 	                        	req.send();
-	                        	logger.info("[WARNING] the level of glucose is higher than normal!");
+	                        	logger.info("[WARNING] - "+ip+" - the level of glucose is higher than normal!");
 	                        	th.updateSensorState(ip, state);
 							}
 						} else if(value > UPPER_BOUND_GLU)
@@ -94,7 +95,7 @@ public class SmartDevice{
 								req.setPayload(payload);
 	                        	req.setURI("coap://[" + ip + "]/alarm?color=r");
 	                        	req.send();
-	                        	logger.info("[WARNING] the level of glucose is too high!");
+	                        	logger.info("[CRITICAL] - "+ip+" - the level of glucose is too high!");
 	                        	th.updateSensorState(ip, state);
 							}
 						} else {
@@ -106,19 +107,21 @@ public class SmartDevice{
 								req.setPayload(payload);
 	                        	req.setURI("coap://[" + ip + "]/alarm?color=g");
 	                        	req.send();
-	                        	logger.info("[NORMAL] the level of glucose is normal!");
+	                        	logger.info("[NORMAL] - "+ip+" - the level of glucose is normal!");
 	                        	th.updateSensorState(ip, state);
 							}
 						}
 					}
 					
 					public void onError() {
-						th.deleteSensor(ip);
-						logger.error("OBSERVING FAILED with node " + ip);
+						if(ResRegistration.removeDevice(ip)) {
+							th.deleteSensor(ip);
+							logger.error("OBSERVING FAILED with sensor " + ip);
+						} else {
+							logger.error("Sensor not in the registered list " + ip);
+						}
                     }
-				}, MediaTypeRegistry.APPLICATION_JSON);
-                
-                
+				}, MediaTypeRegistry.APPLICATION_JSON);           
 	}
 
 	public String getIP() {

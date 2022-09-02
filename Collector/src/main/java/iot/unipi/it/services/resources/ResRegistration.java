@@ -27,13 +27,11 @@ public class ResRegistration extends CoapResource{
 	public void handlePOST(CoapExchange exchange) {
 		String deviceType = exchange.getRequestText();
         String ipAddress = exchange.getSourceAddress().getHostAddress();
-        
-		boolean success = checkRegistration(ipAddress);
 		
-		if (success)
+		if (contains(ipAddress)<0)
 			if(th.addSensor(ipAddress)) {
 				this.smartDevices.add(new SmartDevice(ipAddress));
-				logger.info("A new smart device: [" + ipAddress + "] is now registered");
+				logger.info("A new smart device: [" + ipAddress + "] is now registered!");
 				exchange.respond(CoAP.ResponseCode.CREATED, "Registration, Success!".getBytes(StandardCharsets.UTF_8));
 			}
 			else {
@@ -55,13 +53,27 @@ public class ResRegistration extends CoapResource{
 			exchange.respond(CoAP.ResponseCode.BAD_REQUEST, "Cancellation not allowed!".getBytes(StandardCharsets.UTF_8));
 	}
 	
-	private boolean checkRegistration(final String ipAddress) {
-
-		for(SmartDevice device : this.smartDevices) {
+	private static int contains(final String ipAddress) {
+		int idx = -1;
+		
+		for(SmartDevice device : smartDevices) {
+			idx++;
 			if(device.getIP().contentEquals(ipAddress))
-				return false;
+				return idx;
 		}
-		return true;
+		return -1;
+	}
+	
+	public static boolean removeDevice(final String ipAddress) {
+		boolean success = true;
+		int idx = contains(ipAddress);
+		if (idx > -1) {
+			smartDevices.remove(idx);
+		} else {
+			success = false;
+		}
+		
+		return success;
 	}
 	
 
