@@ -1,0 +1,13 @@
+2022-09-03 11:26:31,539 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-03 11:26:33,206 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 93, "timestamp": 36}
+2022-09-03 11:26:36,731 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 92, "timestamp": 37}
+2022-09-03 11:26:39,201 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 93, "timestamp": 42}
+2022-09-03 11:26:39,694 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 94, "timestamp": 43}
+2022-09-03 11:26:42,197 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 93, "timestamp": 45}
+2022-09-03 11:26:42,710 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 92, "timestamp": 46}
+2022-09-03 11:26:43,207 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 93, "timestamp": 46}
+2022-09-03 11:26:43,683 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 94, "timestamp": 47}
+2022-09-03 11:26:46,179 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 93, "timestamp": 49}
+2022-09-03 11:26:46,683 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 92, "timestamp": 50}
+2022-09-03 11:26:57,202 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 93, "timestamp": 60}
+2022-09-03 11:26:57,682 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.device.SmartDevice - Message arrived: {"node": 2, "glucose": 94, "timestamp": 61}

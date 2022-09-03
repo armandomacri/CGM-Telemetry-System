@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
+import java.sql.*;
 
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
@@ -149,6 +150,25 @@ public final class TelemetryDBService {
         } catch (SQLException se) {
         	logger.error("Error in the add observation query! ", se);
         	success = false;
+        }
+		return success;
+    }
+    
+    public boolean checkSensorExistence(String sensor) {
+    	String query = "SELECT nodeId FROM sensors WHERE nodeId=?;";
+    	boolean success = false;
+    	getConnection();
+    	try (PreparedStatement ps = conn.prepareStatement(query);) 
+    	{
+    		ps.setString(1, sensor);
+    		ResultSet rs = ps.executeQuery();
+    		while(rs.next()) {
+    			success = true;
+    		}
+    		
+        } catch (SQLException se) {
+        	logger.error("Error in the check sensor existence query! ", se);
+        	success = true;
         }
 		return success;
     }
