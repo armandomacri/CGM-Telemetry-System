@@ -44,7 +44,7 @@ public class CollectorMQTT implements MqttCallback{
 				logger.error("CollectorMQTT unable to connect, Retrying ...", me);
 				try {
 					Thread.sleep(timeWindow);
-				} catch (InterruptedException e) {
+				} catch (InterruptedException ie) {
 					logger.error("Something wrong with thread sleep!", ie);
 				}
 			}

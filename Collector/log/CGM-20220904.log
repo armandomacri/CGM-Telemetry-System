@@ -1,0 +1,81 @@
+2022-09-04 10:12:53,349 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-04 10:12:53,431 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-04 10:15:34,756 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered!
+2022-09-04 10:15:36,384 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:203:3:3:3] is now registered!
+2022-09-04 10:15:39,903 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:204:4:4:4] is now registered!
+2022-09-04 10:19:13,631 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-04 10:19:13,688 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-04 10:19:54,373 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:204:4:4:4] is now registered!
+2022-09-04 10:19:54,966 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:203:3:3:3] is now registered!
+2022-09-04 10:19:57,310 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered!
+2022-09-04 10:29:36,190 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-04 10:29:36,285 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-04 10:31:30,762 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-04 10:31:30,861 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-04 10:32:07,813 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered!
+2022-09-04 10:32:08,855 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:204:4:4:4] is now registered!
+2022-09-04 10:32:12,443 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:203:3:3:3] is now registered!
+2022-09-04 10:35:44,406 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-04 10:35:44,466 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-04 10:36:15,685 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered!
+2022-09-04 10:36:17,301 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:203:3:3:3] is now registered!
+2022-09-04 10:36:20,818 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:204:4:4:4] is now registered!
+2022-09-04 12:52:03,603 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-04 12:52:03,690 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-04 12:52:24,717 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered!
+2022-09-04 12:52:25,729 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:204:4:4:4] is now registered!
+2022-09-04 12:52:29,293 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:203:3:3:3] is now registered!
+2022-09-04 12:54:50,286 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - OBSERVING FAILED with sensor fd00:0:0:0:203:3:3:3
+2022-09-04 12:55:00,234 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - OBSERVING FAILED with sensor fd00:0:0:0:202:2:2:2
+2022-09-04 12:55:06,599 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - OBSERVING FAILED with sensor fd00:0:0:0:204:4:4:4
+2022-09-04 12:55:39,615 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-04 12:55:39,675 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-04 12:56:55,521 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered!
+2022-09-04 12:56:57,095 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:203:3:3:3] is now registered!
+2022-09-04 12:57:00,534 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:204:4:4:4] is now registered!
+2022-09-04 12:58:01,308 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:203:3:3:3 - the level of glucose is higher than normal!
+2022-09-04 12:58:07,705 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:202:2:2:2 - the level of glucose is higher than normal!
+2022-09-04 12:58:09,351 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [CRITICAL] - fd00:0:0:0:203:3:3:3 - the level of glucose is too high!
+2022-09-04 12:58:12,791 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:204:4:4:4 - the level of glucose is higher than normal!
+2022-09-04 12:58:28,780 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [CRITICAL] - fd00:0:0:0:204:4:4:4 - the level of glucose is too high!
+2022-09-04 12:58:31,730 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [NORMAL] - fd00:0:0:0:202:2:2:2 - the level of glucose is normal!
+2022-09-04 12:58:39,715 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:202:2:2:2 - the level of glucose is higher than normal!
+2022-09-04 12:58:47,768 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [NORMAL] - fd00:0:0:0:202:2:2:2 - the level of glucose is normal!
+2022-09-04 12:59:00,903 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:204:4:4:4 - the level of glucose is higher than normal!
+2022-09-04 12:59:16,890 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [NORMAL] - fd00:0:0:0:204:4:4:4 - the level of glucose is normal!
+2022-09-04 12:59:24,917 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:204:4:4:4 - the level of glucose is higher than normal!
+2022-09-04 12:59:37,826 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [CRITICAL] - fd00:0:0:0:204:4:4:4 - the level of glucose is too high!
+2022-09-04 12:59:59,301 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:202:2:2:2 - the level of glucose is higher than normal!
+2022-09-04 13:00:11,281 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [NORMAL] - fd00:0:0:0:202:2:2:2 - the level of glucose is normal!
+2022-09-04 13:00:31,325 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:202:2:2:2 - the level of glucose is higher than normal!
+2022-09-04 13:00:43,390 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [CRITICAL] - fd00:0:0:0:202:2:2:2 - the level of glucose is too high!
+2022-09-04 13:25:29,811 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-04 13:25:29,882 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-04 13:25:48,658 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:203:3:3:3] is now registered!
+2022-09-04 13:25:50,265 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered!
+2022-09-04 13:25:50,382 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:204:4:4:4] is now registered!
+2022-09-04 13:26:18,483 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:204:4:4:4 - the level of glucose is higher than normal!
+2022-09-04 13:26:22,390 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:202:2:2:2 - the level of glucose is higher than normal!
+2022-09-04 13:26:22,506 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [CRITICAL] - fd00:0:0:0:204:4:4:4 - the level of glucose is too high!
+2022-09-04 13:26:26,407 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [CRITICAL] - fd00:0:0:0:202:2:2:2 - the level of glucose is too high!
+2022-09-04 13:26:30,507 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:204:4:4:4 - the level of glucose is higher than normal!
+2022-09-04 13:26:42,521 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [CRITICAL] - fd00:0:0:0:204:4:4:4 - the level of glucose is too high!
+2022-09-04 13:26:46,524 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:204:4:4:4 - the level of glucose is higher than normal!
+2022-09-04 13:26:48,769 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:203:3:3:3 - the level of glucose is higher than normal!
+2022-09-04 13:26:50,517 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [CRITICAL] - fd00:0:0:0:204:4:4:4 - the level of glucose is too high!
+2022-09-04 13:26:52,782 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [CRITICAL] - fd00:0:0:0:203:3:3:3 - the level of glucose is too high!
+2022-09-04 13:30:41,588 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-04 13:30:41,670 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-04 13:30:47,772 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered!
+2022-09-04 13:30:48,507 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:203:3:3:3] is now registered!
+2022-09-04 13:30:50,231 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:204:4:4:4] is now registered!
+2022-09-04 13:31:27,847 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:202:2:2:2 - the level of glucose is higher than normal!
+2022-09-04 13:31:35,853 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [NORMAL] - fd00:0:0:0:202:2:2:2 - the level of glucose is normal!
+2022-09-04 13:31:47,940 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:202:2:2:2 - the level of glucose is higher than normal!
+2022-09-04 13:31:51,962 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [CRITICAL] - fd00:0:0:0:202:2:2:2 - the level of glucose is too high!
+2022-09-04 13:32:04,766 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:203:3:3:3 - the level of glucose is higher than normal!
+2022-09-04 13:32:06,482 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:204:4:4:4 - the level of glucose is higher than normal!
+2022-09-04 13:32:08,768 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [NORMAL] - fd00:0:0:0:203:3:3:3 - the level of glucose is normal!
+2022-09-04 13:32:12,798 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:203:3:3:3 - the level of glucose is higher than normal!
+2022-09-04 13:32:14,519 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [CRITICAL] - fd00:0:0:0:204:4:4:4 - the level of glucose is too high!
+2022-09-04 13:32:24,824 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [CRITICAL] - fd00:0:0:0:203:3:3:3 - the level of glucose is too high!

@@ -15,10 +15,10 @@
 
 #define VARIATION 1
 // mg/dL
-static int LOWER_BOUND_GLU = 70;
-static int UPPER_BOUND_GLU = 125;
 
 static int glucose = 90;
+int LOWER_BOUND_GLU = 100;
+int UPPER_BOUND_GLU = 125;
 
 /**************** REST: Glucose **********************/
 static void res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
@@ -48,22 +48,14 @@ static void res_get_handler(coap_message_t *request, coap_message_t *response, u
         if (glucose < LOWER_BOUND_GLU)
         {
             LOG_INFO("Glucose lower than normal\n");
-            int length = snprintf(NULL, 0,"{\"node_id\":%d,\"glucose\": %f, \"timestamp\": %lu}", node_id, glucose, clock_seconds());
-            msg = (char*)malloc((length)*sizeof(char));
-            snprintf(msg, length, "WARN cold %d", glucose);
         }
         else if (glucose > UPPER_BOUND_GLU)
         {
             LOG_INFO("Glucose greater than normal\n");
-            int length = snprintf(NULL, 0,"%d", glucose) + sizeof("WARN hot") + 1;
-            msg = (char*)malloc((length)*sizeof(char));
-            snprintf(msg, length, "WARN hot %d", glucose);
         }
         else
         {
-            static const size_t max_char_len = 4; //-dd\0
-            msg = (char*)malloc((max_char_len)*sizeof(char));
-            snprintf(msg, max_char_len, "%d", glucose);
+;
         }
         */
 
@@ -71,7 +63,7 @@ static void res_get_handler(coap_message_t *request, coap_message_t *response, u
         snprintf((char *)buffer, COAP_MAX_CHUNK_SIZE, "{\"node_id\":%d,\"glucose\":%d,\"timestamp\":%lu}", node_id, glucose, clock_seconds());
         int length = strlen((char*)buffer);
 
-        printf("prova: %s\n", buffer);
+        printf("%s\n", buffer);
 
         // COAP FUNCTIONS
         coap_set_header_content_format(response, APPLICATION_JSON);

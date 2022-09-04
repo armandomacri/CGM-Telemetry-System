@@ -21,21 +21,21 @@ import iot.unipi.it.services.resources.ResRegistration;
 public class SmartDevice{
 	private static int LOWER_BOUND_GLU = 92;
 	private static int UPPER_BOUND_GLU = 93;
-	private short state = 0;
 	private static final Logger logger = LogManager.getLogger(SmartDevice.class);
 	private static final TelemetryDBService th = TelemetryDBService.getInstance();
 	
 	private final String ip;
 	private CoapClient resGlucosio;
 	private CoapClient resAlarm;
-	
+	private boolean stopObserve = false;
+	private short state = 0;
 		
 	public SmartDevice(String ipAddress) {
 		this.ip = ipAddress;
 		this.resGlucosio = new CoapClient("coap://[" + ipAddress + "]/glucose");
 		this.resAlarm = new CoapClient("coap://[" + ipAddress + "]/alarm"); 
 		
-		CoapObserveRelation newObserveTemperature = this.resGlucosio.observe(
+		CoapObserveRelation newObserveGlucose = this.resGlucosio.observe(
 				new CoapHandler() {
 					public void onLoad(CoapResponse response) {
 						boolean success = true;
@@ -111,17 +111,27 @@ public class SmartDevice{
 	                        	th.updateSensorState(ip, state);
 							}
 						}
+						
 					}
 					
 					public void onError() {
+						stopObserve = true;
+						logger.error("OBSERVING FAILED with sensor " + ip);
+						
 						if(ResRegistration.removeDevice(ip)) {
 							th.deleteSensor(ip);
 							logger.error("OBSERVING FAILED with sensor " + ip);
 						} else {
 							logger.error("Sensor not in the registered list " + ip);
 						}
-                    }
-				}, MediaTypeRegistry.APPLICATION_JSON);           
+                    
+					}
+				}, MediaTypeRegistry.APPLICATION_JSON);
+		
+		if (stopObserve) {
+			newObserveGlucose.proactiveCancel();
+		}
+		
 	}
 
 	public String getIP() {

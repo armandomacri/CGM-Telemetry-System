@@ -2,6 +2,8 @@ package iot.unipi.it.services.resources;
 
 import java.nio.charset.StandardCharsets;
 import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 import org.apache.logging.log4j.LogManager;
@@ -16,8 +18,7 @@ import iot.unipi.it.services.TelemetryDBService;
 public class ResRegistration extends CoapResource{
 	private static final Logger logger = LogManager.getLogger(SmartDevice.class);
 	private static final TelemetryDBService th = TelemetryDBService.getInstance();
-	
-	private static List<SmartDevice> smartDevices = new ArrayList<SmartDevice>();
+	private static Collection<SmartDevice> smartDevices = Collections.synchronizedList(new ArrayList<SmartDevice>());
 	
 	public ResRegistration() {
 		super("registration");
@@ -25,19 +26,25 @@ public class ResRegistration extends CoapResource{
 	
 	@Override
 	public void handlePOST(CoapExchange exchange) {
+		exchange.accept();
 		String deviceType = exchange.getRequestText();
         String ipAddress = exchange.getSourceAddress().getHostAddress();
-		
-		if (contains(ipAddress)<0)
+        
+		if (contains(ipAddress)<0) {
 			if(th.addSensor(ipAddress)) {
-				this.smartDevices.add(new SmartDevice(ipAddress));
+        		synchronized(smartDevices) {
+        				ResRegistration.smartDevices.add(new SmartDevice(ipAddress));
+        		}
 				logger.info("A new smart device: [" + ipAddress + "] is now registered!");
 				exchange.respond(CoAP.ResponseCode.CREATED, "Registration, Success!".getBytes(StandardCharsets.UTF_8));
 			}
 			else {
 				logger.error("Impossible to add new device!");
-				exchange.respond(CoAP.ResponseCode.NOT_ACCEPTABLE, "Registratio, Unsuccessful".getBytes(StandardCharsets.UTF_8));	
-			}			
+				exchange.respond(CoAP.ResponseCode.NOT_ACCEPTABLE, "Registration, Unsuccessful".getBytes(StandardCharsets.UTF_8));	
+			}
+		} else {
+			logger.warn("Device " + ipAddress + " already registered!");
+		}
 	}
 	
 	@Override
@@ -68,13 +75,14 @@ public class ResRegistration extends CoapResource{
 		boolean success = true;
 		int idx = contains(ipAddress);
 		if (idx > -1) {
-			smartDevices.remove(idx);
+			synchronized(smartDevices) {
+        		ResRegistration.smartDevices.remove(idx);
+        	}
+			
 		} else {
 			success = false;
 		}
 		
 		return success;
 	}
-	
-
 }

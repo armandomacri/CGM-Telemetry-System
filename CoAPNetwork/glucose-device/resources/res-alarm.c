@@ -29,7 +29,7 @@ static void res_post_put_handler(coap_message_t *request, coap_message_t *respon
 
     if((len = coap_get_query_variable(request, "color", &color))) 
     {
-        //LOG_INFO("color %.*s\n", (int)len, color);
+        LOG_INFO("color %.*s\n", (int)len, color);
 
         if(strncmp(color, "r", len) == 0) 
         {
@@ -48,7 +48,7 @@ static void res_post_put_handler(coap_message_t *request, coap_message_t *respon
         success = 0;
     } if(success && (len = coap_get_post_variable(request, "mode", &mode))) 
     {
-        //LOG_DBG("mode %s\n", mode);
+        LOG_DBG("mode %s\n", mode);
 
         if(strncmp(mode, "on", len) == 0) 
         {

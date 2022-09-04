@@ -10,8 +10,8 @@ public class RegistrationService extends CoapServer {
 	private static final Logger logger = LogManager.getLogger(RegistrationService.class);
 	
 	public RegistrationService() {
-        add(new ResRegistration());
-        logger.info("CoAP Server is up");
+		this.add(new ResRegistration());
+		logger.info("CoAP Server is up");
     }
 
 }

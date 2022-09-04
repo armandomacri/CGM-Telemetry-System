@@ -1,0 +1,82 @@
+2022-09-03 11:29:00,281 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-03 11:35:58,702 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-03 11:37:08,980 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-03 11:37:09,031 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-03 11:37:34,468 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered!
+2022-09-03 11:37:36,085 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:203:3:3:3] is now registered!
+2022-09-03 11:37:40,594 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:204:4:4:4] is now registered!
+2022-09-03 11:39:03,228 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:202:2:2:2 - the level of glucose is higher than normal!
+2022-09-03 11:39:40,084 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [NORMAL] - fd00:0:0:0:202:2:2:2 - the level of glucose is normal!
+2022-09-03 11:41:54,577 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - OBSERVING FAILED with sensor fd00:0:0:0:202:2:2:2
+2022-09-03 11:48:46,485 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-03 11:48:46,549 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.device.SmartDevice - Connection is broken!
+2022-09-03 11:48:46,550 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Trying to reconnect in 3 seconds.
+2022-09-03 11:48:46,550 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.device.SmartDevice - Something wrong with thread sleep!
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method) ~[?:1.8.0_342]
+	at iot.unipi.it.services.CollectorMQTT.connectionLost(CollectorMQTT.java:72) ~[classes/:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.connectionLost(CommsCallback.java:292) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:423) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:181) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_342]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_342]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_342]
+2022-09-03 11:48:46,562 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Trying to reconnect in 3 seconds.
+2022-09-03 11:48:46,557 [main] ERROR iot.unipi.it.device.SmartDevice - CollectorMQTT unable to connect, Retrying ...
+org.eclipse.paho.client.mqttv3.MqttPersistenceException: MqttException
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.restoreBackups(MqttDefaultFilePersistence.java:276) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.open(MqttDefaultFilePersistence.java:126) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ConnectActionListener.connect(ConnectActionListener.java:174) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ConnectActionListener.onFailure(ConnectActionListener.java:137) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.fireActionEvent(CommsCallback.java:326) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.handleActionComplete(CommsCallback.java:260) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.asyncOperationComplete(CommsCallback.java:445) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:418) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:170) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_342]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_342]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_342]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_342]
+	at java.lang.Thread.run(Thread.java:750) ~[?:1.8.0_342]
+2022-09-03 11:48:49,563 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Reconnecting ...
+2022-09-03 11:48:49,572 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.device.SmartDevice - Connection is restored
+2022-09-03 11:49:08,012 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-03 11:49:08,068 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-03 11:49:57,897 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered!
+2022-09-03 11:49:59,503 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:203:3:3:3] is now registered!
+2022-09-03 11:50:02,960 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:204:4:4:4] is now registered!
+2022-09-03 11:50:59,209 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:204:4:4:4 - the level of glucose is higher than normal!
+2022-09-03 11:51:07,217 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [NORMAL] - fd00:0:0:0:204:4:4:4 - the level of glucose is normal!
+2022-09-03 11:53:36,184 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - OBSERVING FAILED with sensor fd00:0:0:0:204:4:4:4
+2022-09-03 12:01:10,264 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-03 12:01:10,388 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-03 12:04:20,320 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered!
+2022-09-03 12:04:21,891 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:203:3:3:3] is now registered!
+2022-09-03 12:04:25,343 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:204:4:4:4] is now registered!
+2022-09-03 12:07:18,817 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - OBSERVING FAILED with sensor fd00:0:0:0:202:2:2:2
+2022-09-03 12:37:54,433 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-03 12:37:54,499 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-03 12:38:19,422 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered!
+2022-09-03 12:38:20,832 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:203:3:3:3] is now registered!
+2022-09-03 12:38:25,382 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:204:4:4:4] is now registered!
+2022-09-03 12:39:08,989 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:203:3:3:3 - the level of glucose is higher than normal!
+2022-09-03 12:39:17,017 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [CRITICAL] - fd00:0:0:0:203:3:3:3 - the level of glucose is too high!
+2022-09-03 12:39:29,716 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-03 12:39:29,789 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-03 12:39:59,201 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered!
+2022-09-03 12:40:00,770 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:203:3:3:3] is now registered!
+2022-09-03 12:40:04,275 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:204:4:4:4] is now registered!
+2022-09-03 12:40:19,281 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:202:2:2:2 - the level of glucose is higher than normal!
+2022-09-03 12:40:22,505 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [CRITICAL] - fd00:0:0:0:202:2:2:2 - the level of glucose is too high!
+2022-09-03 12:42:28,571 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - OBSERVING FAILED with sensor fd00:0:0:0:202:2:2:2
+2022-09-03 12:56:26,023 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-03 12:56:26,070 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-03 12:57:14,185 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered!
+2022-09-03 12:57:15,792 [CoapServer#2] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:203:3:3:3] is now registered!
+2022-09-03 12:57:19,293 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:204:4:4:4] is now registered!
