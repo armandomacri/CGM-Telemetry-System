@@ -93,6 +93,10 @@ public class CollectorMQTT implements MqttCallback{
 				int timestamp = Integer.parseInt(sensorMessage.get("timestamp").toString());
 				Integer value = Integer.parseInt(sensorMessage.get("glucose").toString());
 				String nodeId = sensorMessage.get("node").toString();
+				if(!th.checkSensorExistence("mqtt://"+nodeId)) {
+					th.addSensor("mqtt://"+nodeId);
+				}
+				th.addObservation("mqtt://"+nodeId, value, timestamp);
 				int lower = 99;
 				int upper = 125;
 				boolean on = false;
@@ -104,7 +108,7 @@ public class CollectorMQTT implements MqttCallback{
 						reply = "y";
 						publish(reply, nodeId);
                     	logger.info("[WARNING] - "+nodeId+" - the level of glucose is higher than normal!");
-                    	//th.updateSensorState(nodeId, state);
+                    	th.updateSensorState("mqtt://"+nodeId, state);
 					}
 				} else if(value > upper)
 				{
@@ -113,7 +117,7 @@ public class CollectorMQTT implements MqttCallback{
 						reply = "r";
 						publish(reply, nodeId);
                     	logger.info("[CRITICAL] - "+nodeId+" - the level of glucose is too high!");
-                    	//th.updateSensorState(nodeId, state);
+                    	th.updateSensorState("mqtt://"+nodeId, state);
 					}
 				} else {
 					if(state != 0) {
@@ -121,7 +125,7 @@ public class CollectorMQTT implements MqttCallback{
 						reply = "g";
 						publish(reply, nodeId);
                     	logger.info("[NORMAL] - "+nodeId+" - the level of glucose is normal!");
-                    	//th.updateSensorState(nodeId, state);
+                    	th.updateSensorState("mqtt://"+nodeId, state);
 					}
 				}
 				 
