@@ -117,7 +117,7 @@ pub_handler(const char *topic, uint16_t topic_len, const uint8_t *chunk,
     }
     else if(strcmp((const char *)chunk, "y")==0){
         leds_set(LEDS_NUM_TO_MASK(LEDS_YELLOW));
-        leds_on(LEDS_GREEN);
+        leds_on(LEDS_NUM_TO_MASK(LEDS_GREEN));
         printf("Glucose level higher than normal!\n");
     }else if (strcmp((const char *)chunk, "g")==0){
         leds_set(LEDS_NUM_TO_MASK(LEDS_GREEN));
@@ -254,7 +254,7 @@ PROCESS_THREAD(mqtt_client_process, ev, data)
 		  if(state == STATE_NET_OK){
 			  // Connect to MQTT server
 			  printf("Connecting!\n");
-			  
+			  leds_set(LEDS_NUM_TO_MASK(LEDS_YELLOW));
 			  memcpy(broker_address, broker_ip, strlen(broker_ip));
 			  
 			  mqtt_connect(&conn, broker_address, DEFAULT_BROKER_PORT,
@@ -276,7 +276,7 @@ PROCESS_THREAD(mqtt_client_process, ev, data)
 					PROCESS_EXIT();
 			  
 			         }
-
+			 leds_set(LEDS_NUM_TO_MASK(LEDS_GREEN));
 			 state = STATE_SUBSCRIBED;
 		  }
 
@@ -290,13 +290,14 @@ PROCESS_THREAD(mqtt_client_process, ev, data)
 			  {
 			    glucose = new_glu;
 		            sprintf(app_buffer, "{\"node\": %d, \"glucose\": %d, \"timestamp\": %lu}", node_id, glucose, clock_seconds());
+		            printf("%s\n", app_buffer);
 			    mqtt_publish(&conn, NULL, pub_topic, (uint8_t *)app_buffer,
 			       strlen(app_buffer), MQTT_QOS_LEVEL_0, MQTT_RETAIN_OFF);
 			  }
 			
 		} else if ( state == STATE_DISCONNECTED ){
 		   LOG_ERR("Disconnected form MQTT broker\n");	
-		   // Recover from error
+		   state = STATE_INIT;
 		}
 		
 		etimer_set(&periodic_timer, STATE_MACHINE_PERIODIC);
