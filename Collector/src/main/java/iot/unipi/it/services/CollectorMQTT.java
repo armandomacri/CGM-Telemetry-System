@@ -19,21 +19,22 @@ import iot.unipi.it.services.TelemetryDBService;
 import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 
-
 public class CollectorMQTT implements MqttCallback{
 	
 	private static String broker = "tcp://127.0.0.1:1883";
 	private static String clientId = "CollectorMQTT";
 	private static String subTopic = "glucose";
 	private static String pubTopic = "alarm";
+	private static String pubTopic2 = "sampling_rate";
 	private static MqttClient mqttClient = null;
 	private short state = 0;
-	private static final Logger logger = LogManager.getLogger(SmartDevice.class);
+	private static final Logger logger = LogManager.getLogger(CollectorMQTT.class);
 	private static final TelemetryDBService th = TelemetryDBService.getInstance();
-
+	private static int samplingRate;
 	
-	public CollectorMQTT() {
+	public CollectorMQTT(int samplingRate) {
 		do {
+			this.samplingRate = samplingRate;
 			int timeWindow = 50000;
 			try {
 				this.mqttClient = new MqttClient(this.broker,this.clientId);
@@ -56,7 +57,18 @@ public class CollectorMQTT implements MqttCallback{
 		try {
 			MqttMessage message = new MqttMessage(content.getBytes());
 			this.mqttClient.publish(this.pubTopic+node, message);
-			logger.info("MQTT published!");
+			logger.info("MQTT alarm published!");
+		} catch(MqttException me) {
+			logger.error("Impossible to publish!", me);
+		}
+	}
+	
+
+	public void changeInterval(String interval) throws MqttException{
+		try {
+			MqttMessage message = new MqttMessage(interval.getBytes());
+			this.mqttClient.publish(this.pubTopic2, message);
+			logger.info("MQTT sampling_rate published!");
 		} catch(MqttException me) {
 			logger.error("Impossible to publish!", me);
 		}
@@ -94,6 +106,7 @@ public class CollectorMQTT implements MqttCallback{
 				Integer value = Integer.parseInt(sensorMessage.get("glucose").toString());
 				String nodeId = sensorMessage.get("node").toString();
 				if(!th.checkSensorExistence("mqtt://"+nodeId)) {
+					changeInterval(String.valueOf(this.samplingRate));
 					th.addSensor("mqtt://"+nodeId);
 				}
 				th.addObservation("mqtt://"+nodeId, value, timestamp);
@@ -136,7 +149,7 @@ public class CollectorMQTT implements MqttCallback{
 	}
 
 	public void deliveryComplete(IMqttDeliveryToken token) {
-		logger.info("Delievery Completed");
+		logger.info("Delivery Completed");
 		
 	}
 

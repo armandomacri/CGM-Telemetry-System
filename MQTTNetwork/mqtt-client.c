@@ -39,6 +39,7 @@ static const char *broker_ip = MQTT_CLIENT_BROKER_IP_ADDR;
 #define UPPER_BOUND_GLU             125
 #define VARIATION                   1
 
+static long PUBLISH_INTERVAL = DEFAULT_PUBLISH_INTERVAL;
 static int new_glu;
 
 // We assume that the broker does not require authentication
@@ -54,6 +55,7 @@ static uint8_t state;
 #define STATE_CONNECTED       3
 #define STATE_SUBSCRIBED      4
 #define STATE_DISCONNECTED    5
+#define STATE_CONNECTED_2	6
 
 /*---------------------------------------------------------------------------*/
 PROCESS_NAME(mqtt_client_process);
@@ -77,8 +79,9 @@ static char sub_topic[BUFFER_SIZE];
 static int glucose = 90;
 
 // Periodic timer to check the state of the MQTT client
-#define STATE_MACHINE_PERIODIC     (CLOCK_SECOND >> 1)
+#define DEFAULT_STATE_MACHINE_PERIODIC     (CLOCK_SECOND >> 1)
 static struct etimer periodic_timer;
+static long STATE_MACHINE_PERIODIC = DEFAULT_STATE_MACHINE_PERIODIC;
 
 /*---------------------------------------------------------------------------*/
 /*
@@ -105,7 +108,7 @@ pub_handler(const char *topic, uint16_t topic_len, const uint8_t *chunk,
   printf("Pub Handler: topic='%s' (len=%u), chunk_len=%u\n", topic,
           topic_len, chunk_len);
 
-  char t[11];
+  char t[15];
   sprintf(t, "alarm%d", node_id);
   if(strcmp(topic, t) == 0) {
     printf("Received Actuator command\n");
@@ -128,7 +131,18 @@ pub_handler(const char *topic, uint16_t topic_len, const uint8_t *chunk,
 
     return;
   }
+  sprintf(t, "sampling_rate");
+  if(strcmp(topic, t) == 0) {
+    printf("Changing sampling rate\n");
+    long interval = atol((const char*)chunk);
+    printf("%ld\n", interval);
+    PUBLISH_INTERVAL = interval*CLOCK_SECOND;
+    return;
+  }
+  
 }
+
+static bool check_sub = false;
 /*---------------------------------------------------------------------------*/
 static void
 mqtt_event(struct mqtt_connection *m, mqtt_event_t event, void *data)
@@ -160,11 +174,13 @@ mqtt_event(struct mqtt_connection *m, mqtt_event_t event, void *data)
 
     if(suback_event->success) {
       printf("Application is subscribed to topic successfully\n");
+      check_sub = true;
     } else {
       printf("Application failed to subscribe to topic (ret code %x)\n", suback_event->return_code);
     }
 #else
     printf("Application is subscribed to topic successfully\n");
+    check_sub = true;
 #endif
     break;
   }
@@ -264,22 +280,40 @@ PROCESS_THREAD(mqtt_client_process, ev, data)
 		  }
 		  
 		  if(state==STATE_CONNECTED){
-				 char t[11];
+			 	 char t[15];
 				 sprintf(t, "alarm%d", node_id);
 				 strcpy(sub_topic,t);
 
 				 status = mqtt_subscribe(&conn, NULL, sub_topic, MQTT_QOS_LEVEL_0);
 
-				 printf("Subscribing!\n");
+				 printf("Subscribing to topic alarm\n");
 				 if(status == MQTT_STATUS_OUT_QUEUE_FULL) {
 					LOG_ERR("Tried to subscribe but command queue was full!\n");
 					PROCESS_EXIT();
 			  
-			         }
-			 leds_set(LEDS_NUM_TO_MASK(LEDS_GREEN));
-			 state = STATE_SUBSCRIBED;
-		  }
+				 }
+		 	 	 leds_set(LEDS_NUM_TO_MASK(LEDS_GREEN));
+				 state = STATE_CONNECTED_2;
 
+				 				
+		  }
+			
+		  if(state==STATE_CONNECTED_2 && check_sub){
+			        char t[15];
+				sprintf(t, "sampling_rate");
+			 	strcpy(sub_topic,t);
+				status = mqtt_subscribe(&conn, NULL, sub_topic, MQTT_QOS_LEVEL_0);
+
+				printf("Subscribing to topic sampling rate\n");
+				if(status == MQTT_STATUS_OUT_QUEUE_FULL) {
+					LOG_ERR("Tried to subscribe but command queue was full!\n");
+					PROCESS_EXIT();
+		  
+		         	}
+				state = STATE_SUBSCRIBED;
+		 		PUBLISH_INTERVAL = (1*CLOCK_SECOND);
+        	 		STATE_MACHINE_PERIODIC = PUBLISH_INTERVAL;
+		  }
 			  
 		  if(state == STATE_SUBSCRIBED){
 		          sprintf(pub_topic, "%s", "glucose");
@@ -294,6 +328,7 @@ PROCESS_THREAD(mqtt_client_process, ev, data)
 			    mqtt_publish(&conn, NULL, pub_topic, (uint8_t *)app_buffer,
 			       strlen(app_buffer), MQTT_QOS_LEVEL_0, MQTT_RETAIN_OFF);
 			  }
+			  STATE_MACHINE_PERIODIC = PUBLISH_INTERVAL;
 			
 		} else if ( state == STATE_DISCONNECTED ){
 		   LOG_ERR("Disconnected form MQTT broker\n");	
