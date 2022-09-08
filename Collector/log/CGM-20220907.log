@@ -1,3 +1,11 @@
+<<<<<<< HEAD
+2022-09-07 10:10:48,000 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+2022-09-07 10:10:57,774 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:204:4:4:4] is now registered!
+2022-09-07 10:12:17,908 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:204:4:4:4 - the level of glucose is higher than normal!
+2022-09-07 10:12:57,999 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [CRITICAL] - fd00:0:0:0:204:4:4:4 - the level of glucose is too high!
+2022-09-07 10:16:45,374 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - OBSERVING FAILED with sensor fd00:0:0:0:204:4:4:4
+2022-09-07 10:16:45,381 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] ERROR iot.unipi.it.device.SmartDevice - OBSERVING FAILED with sensor fd00:0:0:0:204:4:4:4
+=======
 2022-09-07 10:16:22,179 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
 2022-09-07 10:16:23,944 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
 2022-09-07 10:16:24,805 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.device.SmartDevice - Connection is broken!
@@ -346,6 +354,7 @@ org.eclipse.paho.client.mqttv3.MqttPersistenceException: MqttException
 2022-09-07 11:23:06,876 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 92, "timestamp": 52}
 2022-09-07 11:23:12,848 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 93, "timestamp": 58}
 2022-09-07 11:23:14,852 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 92, "timestamp": 60}
+<<<<<<< HEAD
 2022-09-07 13:22:08,253 [main] INFO  iot.unipi.it.services.CollectorMQTT - MQTT Connected!
 2022-09-07 13:22:08,456 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
 2022-09-07 13:26:16,414 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.services.CollectorMQTT - Connection is broken!
@@ -717,3 +726,6 @@ Caused by: java.net.ConnectException: Connection refused (Connection refused)
 	... 8 more
 2022-09-07 13:32:48,167 [main] INFO  iot.unipi.it.services.CollectorMQTT - MQTT Connected!
 2022-09-07 13:32:48,332 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+=======
+>>>>>>> b7d8e85a8fe5876c89d198fc908a2bc52e52995b
+>>>>>>> fa65a1e1a463bf1ca6b9290ffe1969ddc3ec4716

@@ -30,7 +30,7 @@ build/cooja/obj/res-glucose.o: resources/res-glucose.c \
  ../../../../os/net/app-layer/coap/coap-engine.h \
  ../../../../os/net/app-layer/coap/coap-observe.h \
  ../../../../os/net/app-layer/coap/coap-separate.h \
- ../../../../os/net/app-layer/coap/coap-observe-client.h \
+ ../../../../os/net/app-layer/coap/coap-observe-client.h parameters.h \
  ../../../../os/sys/log.h ../../../../os/sys/log-conf.h
 resources/res-glucose.c :
  ../../../../os/net/app-layer/coap/module-macros.h :
@@ -64,5 +64,5 @@ resources/res-glucose.c :
  ../../../../os/net/app-layer/coap/coap-engine.h :
  ../../../../os/net/app-layer/coap/coap-observe.h :
  ../../../../os/net/app-layer/coap/coap-separate.h :
- ../../../../os/net/app-layer/coap/coap-observe-client.h :
+ ../../../../os/net/app-layer/coap/coap-observe-client.h parameters.h :
  ../../../../os/sys/log.h ../../../../os/sys/log-conf.h :

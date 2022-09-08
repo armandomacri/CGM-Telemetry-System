@@ -23,12 +23,13 @@ public class SmartDevice{
 	private static int UPPER_BOUND_GLU = 93;
 	private static final Logger logger = LogManager.getLogger(SmartDevice.class);
 	private static final TelemetryDBService th = TelemetryDBService.getInstance();
-	
+
 	private final String ip;
 	private CoapClient resGlucosio;
 	private CoapClient resAlarm;
 	private boolean stopObserve = false;
 	private short state = 0;
+	
 		
 	public SmartDevice(String ipAddress) {
 		this.ip = ipAddress;

@@ -1,4 +1,9 @@
 2022-09-05 13:10:44,519 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
 2022-09-05 13:10:44,674 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+<<<<<<< HEAD
+2022-09-05 13:24:16,997 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-05 13:24:17,051 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+=======
 2022-09-05 13:25:47,753 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
 2022-09-05 13:25:47,828 [main] INFO  iot.unipi.it.device.SmartDevice - MQTT Connected!
+>>>>>>> b7d8e85a8fe5876c89d198fc908a2bc52e52995b

@@ -10,6 +10,8 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.eclipse.californium.core.CoapResource;
 import org.eclipse.californium.core.coap.CoAP;
+import org.eclipse.californium.core.coap.Request;
+import org.eclipse.californium.core.coap.CoAP.Code;
 import org.eclipse.californium.core.server.resources.CoapExchange;
 
 import iot.unipi.it.device.SmartDevice;
@@ -32,8 +34,8 @@ public class ResRegistration extends CoapResource{
         
 		if (contains(ipAddress)<0) {
 			if(th.addSensor(ipAddress)) {
-        		synchronized(smartDevices) {
-        				ResRegistration.smartDevices.add(new SmartDevice(ipAddress));
+        		synchronized(smartDevices) { 
+        			ResRegistration.smartDevices.add(new SmartDevice(ipAddress));
         		}
 				logger.info("A new smart device: [" + ipAddress + "] is now registered!");
 				exchange.respond(CoAP.ResponseCode.CREATED, "Registration, Success!".getBytes(StandardCharsets.UTF_8));
@@ -42,9 +44,8 @@ public class ResRegistration extends CoapResource{
 				logger.error("Impossible to add new device!");
 				exchange.respond(CoAP.ResponseCode.NOT_ACCEPTABLE, "Registration, Unsuccessful".getBytes(StandardCharsets.UTF_8));	
 			}
-		} else {
-			logger.warn("Device " + ipAddress + " already registered!");
-		}
+		} else
+			logger.warn("Device " + ipAddress + " already registered!");		
 	}
 	
 	@Override

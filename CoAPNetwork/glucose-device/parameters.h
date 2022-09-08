@@ -1,0 +1,1 @@
+extern int sampling_rate;
