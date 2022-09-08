@@ -5,6 +5,7 @@
 #include "contiki.h"
 #include "node-id.h"
 #include "coap-engine.h"
+#include "parameters.h"
 
 /* Log configuration */
 #include "sys/log.h"
@@ -20,6 +21,8 @@ static int glucose = 90;
 int LOWER_BOUND_GLU = 100;
 int UPPER_BOUND_GLU = 125;
 
+int sampling_rate = 8;
+
 /**************** REST: Glucose **********************/
 static void res_get_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
 static void res_put_handler(coap_message_t *request, coap_message_t *response, uint8_t *buffer, uint16_t preferred_size, int32_t *offset);
@@ -28,7 +31,7 @@ static void res_event_handler(void);
 EVENT_RESOURCE(res_glucose,
                "title=\"Glucose sensor\";rt=\"Glucose\";obs",
                res_get_handler,
-               NULL,
+               res_put_handler,
                res_put_handler,
                NULL,
                res_event_handler);
@@ -45,13 +48,13 @@ static void res_get_handler(coap_message_t *request, coap_message_t *response, u
 
         /*
         // IF TOO HOT OR TOO COLD SEND A WARNING
-        if (glucose < LOWER_BOUND_GLU)
+        if (glucose > LOWER_BOUND_GLU && glucose <= UPPER_BOUND_GLU)
         {
-            LOG_INFO("Glucose lower than normal\n");
+            LOG_INFO("Glucose level lower higher than normal.\n");
         }
         else if (glucose > UPPER_BOUND_GLU)
         {
-            LOG_INFO("Glucose greater than normal\n");
+            LOG_INFO("Glucose level too high\n");
         }
         else
         {
@@ -92,30 +95,18 @@ static void res_put_handler(coap_message_t *request, coap_message_t *response, u
     bool success = true;
     if((len = coap_get_payload(request, &payload)))
     {
-        char* chunk = strtok((char*)payload, " ");
-        char* type = (char*)malloc((strlen(chunk))*sizeof(char));
-        strcpy(type, chunk);
+        //char* msg = (char*)malloc((strlen((char*)payload))*sizeof(char));
+        //strcpy(msg, (char*)payload, len);
+
+        int new_value = atoi((char*)payload);
+	
+		LOG_INFO("Received the message: %s", request);
+		//adapting the color of the led to the state of the fruit
+		//ethylene_level = atof(data);
+		LOG_INFO("New sampling rate: %d", new_value);
+
         
-        chunk = strtok(NULL, " ");
-        int new_value = atoi(chunk);
-        printf("type: %s\n", type);
-        if (strncmp(type, "u", 1)==0)
-        {
-            if (new_value < LOWER_BOUND_GLU)
-                success = false;
-            else
-                UPPER_BOUND_GLU = new_value;
-        }
-        else // update the lower bound
-        {
-            if (new_value > UPPER_BOUND_GLU)
-                success = false;
-            else
-                LOWER_BOUND_GLU = new_value;
-        }
-        free(type);
     }
-    printf("LOWER B: %d, UPPER B: %d\n", LOWER_BOUND_GLU, UPPER_BOUND_GLU);
 
     if(!success)
         coap_set_status_code(response, BAD_REQUEST_4_00);
@@ -129,7 +120,7 @@ static void res_event_handler(void)
     int new_glu = glucose;
     int random = rand() % 8; // generate 0, 1, 2, 3, 4, 5, 6, 7
 
-    if (random <4) {// 50% of changing the value
+    if (random <3) {// 35% of changing the value
         if (random == 0) // decrease
             new_glu -= VARIATION;
         else // increase

@@ -11,7 +11,6 @@ public class RegistrationService extends CoapServer {
 	
 	public RegistrationService() {
 		this.add(new ResRegistration());
-		logger.info("CoAP Server is up");
 		System.out.println("Prova per mirko");
     }
 

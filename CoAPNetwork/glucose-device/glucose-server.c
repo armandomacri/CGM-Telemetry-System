@@ -5,6 +5,8 @@
 #include "contiki.h"
 #include "sys/etimer.h"
 #include "dev/leds.h"
+#include "os/dev/serial-line.h"
+#include "parameters.h"
 
 #include "node-id.h"
 #include "net/ipv6/simple-udp.h"
@@ -19,7 +21,7 @@
 #define SERVER_EP "coap://[fd00::1]:5683"
 #define CONN_TRY_INTERVAL 1
 #define REG_TRY_INTERVAL 1
-#define SIMULATION_INTERVAL 8
+
 
 #define SENSOR_TYPE "glucose_sensor"
 
@@ -40,6 +42,8 @@ static bool registered = false;
 static struct etimer wait_connectivity;
 static struct etimer wait_registration;
 static struct etimer simulation;
+
+int sampling_rate;
 
 extern coap_resource_t res_glucose;
 extern coap_resource_t res_alarm;
@@ -85,15 +89,17 @@ void client_chunk_handler(coap_message_t *response)
 //*************************** MAIN THREAD *****************************//
 PROCESS_THREAD(glucose_server, ev, data)
 {
+    PROCESS_BEGIN();
 
     static coap_endpoint_t server_ep;
     static coap_message_t request[1]; // This way the packet can be treated as pointer as usual
 
-    PROCESS_BEGIN();
+    
 
     leds_set(LEDS_NUM_TO_MASK(LEDS_RED));
     etimer_set(&wait_connectivity, CLOCK_SECOND * CONN_TRY_INTERVAL);
 
+    
     while (!connected) {
         PROCESS_WAIT_UNTIL(etimer_expired(&wait_connectivity));
         check_connection();
@@ -121,14 +127,18 @@ PROCESS_THREAD(glucose_server, ev, data)
     coap_activate_resource(&res_alarm, "alarm");
 
     // SIMULATION
-    etimer_set(&simulation, CLOCK_SECOND * SIMULATION_INTERVAL);
+    etimer_set(&simulation, CLOCK_SECOND * sampling_rate);
     
     while (1) {
         PROCESS_WAIT_EVENT();
         
         if (ev == PROCESS_EVENT_TIMER && data == &simulation) {
             res_glucose.trigger();
-            etimer_set(&simulation, CLOCK_SECOND * SIMULATION_INTERVAL);
+            etimer_set(&simulation, CLOCK_SECOND * sampling_rate);
+        } else if (ev == serial_line_event_message && data != NULL){
+            //Specify via servial line the sampling rate
+            sampling_rate = atol((const char*)data);
+            printf("Sampling rate: %d s\n", sampling_rate);
         }
     }
     
