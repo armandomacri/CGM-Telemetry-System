@@ -1,0 +1,2 @@
+2022-09-11 09:21:06,761 [main] INFO  iot.unipi.it.services.CollectorMQTT - MQTT Connected!
+2022-09-11 09:21:06,843 [main] INFO  iot.unipi.it.services.RegistrationService - Coap server is ready!

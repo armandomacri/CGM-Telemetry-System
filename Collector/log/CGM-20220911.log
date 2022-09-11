@@ -21,3 +21,9 @@
 2022-09-11 05:47:51,656 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [WARNING] - fd00:0:0:0:203:3:3:3 - the level of glucose (93 mg/dL) is higher than normal!
 2022-09-11 05:47:53,170 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [CRITICAL] - fd00:0:0:0:204:4:4:4 - the level of glucose (94 mg/dL) is too high!
 2022-09-11 05:48:16,799 [CoapEndpoint-0.0.0.0/0.0.0.0:0#1] INFO  iot.unipi.it.device.SmartDevice - [CRITICAL] - fd00:0:0:0:203:3:3:3 - the level of glucose (94 mg/dL) is too high!
+2022-09-11 09:09:25,830 [main] INFO  iot.unipi.it.services.CollectorMQTT - MQTT Connected!
+2022-09-11 09:09:26,068 [main] INFO  iot.unipi.it.services.RegistrationService - Coap server is ready!
+2022-09-11 09:17:22,489 [main] INFO  iot.unipi.it.services.CollectorMQTT - MQTT Connected!
+2022-09-11 09:17:22,707 [main] INFO  iot.unipi.it.services.RegistrationService - Coap server is ready!
+2022-09-11 09:20:27,286 [main] INFO  iot.unipi.it.services.CollectorMQTT - MQTT Connected!
+2022-09-11 09:20:27,301 [main] INFO  iot.unipi.it.services.RegistrationService - Coap server is ready!

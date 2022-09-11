@@ -101,7 +101,7 @@
                     <archive>
                     	<manifest>
                             <addClasspath>true</addClasspath>
-                            <mainClass>it.unipi.iot.irrigationsystem.Collector</mainClass>
+                            <mainClass>iot.unipi.it.Collector</mainClass>
                             <addDefaultImplementationEntries>true</addDefaultImplementationEntries>
                         </manifest>
                     </archive>
