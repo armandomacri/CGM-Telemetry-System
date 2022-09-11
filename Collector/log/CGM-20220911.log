@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 2022-09-11 05:44:02,701 [main] INFO  iot.unipi.it.services.CollectorMQTT - MQTT Connected!
 2022-09-11 05:44:02,861 [main] INFO  iot.unipi.it.services.RegistrationService - Coap server is ready!
 2022-09-11 05:44:46,663 [CoapServer#1] INFO  iot.unipi.it.device.SmartDevice - A new smart device: [fd00:0:0:0:202:2:2:2] is now registered!
@@ -27,3 +28,572 @@
 2022-09-11 09:17:22,707 [main] INFO  iot.unipi.it.services.RegistrationService - Coap server is ready!
 2022-09-11 09:20:27,286 [main] INFO  iot.unipi.it.services.CollectorMQTT - MQTT Connected!
 2022-09-11 09:20:27,301 [main] INFO  iot.unipi.it.services.RegistrationService - Coap server is ready!
+=======
+2022-09-11 05:45:36,172 [main] INFO  iot.unipi.it.services.CollectorMQTT - MQTT Connected!
+2022-09-11 05:45:36,637 [main] INFO  iot.unipi.it.services.RegistrationService - Coap server is ready!
+2022-09-11 05:50:06,548 [main] INFO  iot.unipi.it.services.CollectorMQTT - MQTT Connected!
+2022-09-11 05:50:07,500 [main] INFO  iot.unipi.it.services.RegistrationService - Coap server is ready!
+2022-09-11 05:57:14,973 [MQTT Rec: JavaCollector] ERROR iot.unipi.it.services.CollectorMQTT - Connection is broken!
+2022-09-11 05:57:14,975 [MQTT Rec: JavaCollector] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 3 seconds.
+2022-09-11 05:57:14,975 [MQTT Rec: JavaCollector] ERROR iot.unipi.it.services.CollectorMQTT - Something wrong with thread sleep!
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method) ~[?:1.8.0_242]
+	at iot.unipi.it.services.CollectorMQTT.connectionLost(CollectorMQTT.java:84) ~[classes/:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.connectionLost(CommsCallback.java:292) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:423) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:181) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+2022-09-11 05:57:15,001 [MQTT Rec: JavaCollector] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 3 seconds.
+2022-09-11 05:57:18,011 [MQTT Rec: JavaCollector] WARN  iot.unipi.it.services.CollectorMQTT - Reconnecting ...
+2022-09-11 05:57:18,039 [MQTT Rec: JavaCollector] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect
+org.eclipse.paho.client.mqttv3.MqttException: Unable to connect to server
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:94) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:701) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_242]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_242]
+	at java.net.Socket.connect(Socket.java:607) ~[?:1.8.0_242]
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:84) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	... 8 more
+2022-09-11 05:57:18,044 [MQTT Rec: JavaCollector] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 6 seconds.
+2022-09-11 05:57:24,045 [MQTT Rec: JavaCollector] WARN  iot.unipi.it.services.CollectorMQTT - Reconnecting ...
+2022-09-11 05:57:24,053 [MQTT Rec: JavaCollector] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect
+org.eclipse.paho.client.mqttv3.MqttException: Unable to connect to server
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:94) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:701) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_242]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_242]
+	at java.net.Socket.connect(Socket.java:607) ~[?:1.8.0_242]
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:84) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	... 8 more
+2022-09-11 05:57:24,060 [MQTT Rec: JavaCollector] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 12 seconds.
+2022-09-11 06:00:34,050 [main] INFO  iot.unipi.it.services.CollectorMQTT - MQTT Connected!
+2022-09-11 06:00:34,512 [main] INFO  iot.unipi.it.services.RegistrationService - Coap server is ready!
+2022-09-11 06:01:23,473 [MQTT Rec: JavaCollector] ERROR iot.unipi.it.services.CollectorMQTT - Connection is broken!
+2022-09-11 06:01:23,475 [MQTT Rec: JavaCollector] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 3 seconds.
+2022-09-11 06:01:23,476 [MQTT Rec: JavaCollector] ERROR iot.unipi.it.services.CollectorMQTT - Something wrong with thread sleep!
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method) ~[?:1.8.0_242]
+	at iot.unipi.it.services.CollectorMQTT.connectionLost(CollectorMQTT.java:84) ~[classes/:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.connectionLost(CommsCallback.java:292) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:423) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:181) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+2022-09-11 06:01:23,506 [MQTT Rec: JavaCollector] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 3 seconds.
+2022-09-11 06:01:26,506 [MQTT Rec: JavaCollector] WARN  iot.unipi.it.services.CollectorMQTT - Reconnecting ...
+2022-09-11 06:01:26,597 [MQTT Rec: JavaCollector] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect
+org.eclipse.paho.client.mqttv3.MqttException: Connection lost
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:181) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210) ~[?:1.8.0_242]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_242]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_242]
+	at java.io.DataInputStream.readByte(DataInputStream.java:265) ~[?:1.8.0_242]
+	at org.eclipse.paho.client.mqttv3.internal.wire.MqttInputStream.readMqttWireMessage(MqttInputStream.java:92) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:133) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	... 7 more
+2022-09-11 06:01:26,637 [MQTT Rec: JavaCollector] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 6 seconds.
+2022-09-11 06:01:32,641 [MQTT Rec: JavaCollector] WARN  iot.unipi.it.services.CollectorMQTT - Reconnecting ...
+2022-09-11 06:01:32,721 [MQTT Rec: JavaCollector] WARN  iot.unipi.it.services.CollectorMQTT - Connection is restored
+2022-09-11 06:01:53,048 [MQTT Rec: JavaCollector] ERROR iot.unipi.it.services.CollectorMQTT - Connection is broken!
+2022-09-11 06:01:53,050 [MQTT Rec: JavaCollector] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 3 seconds.
+2022-09-11 06:01:53,051 [MQTT Rec: JavaCollector] ERROR iot.unipi.it.services.CollectorMQTT - Something wrong with thread sleep!
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method) ~[?:1.8.0_242]
+	at iot.unipi.it.services.CollectorMQTT.connectionLost(CollectorMQTT.java:84) ~[classes/:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.connectionLost(CommsCallback.java:292) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:423) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:181) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+2022-09-11 06:01:53,053 [MQTT Rec: JavaCollector] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 3 seconds.
+2022-09-11 06:01:56,055 [MQTT Rec: JavaCollector] WARN  iot.unipi.it.services.CollectorMQTT - Reconnecting ...
+2022-09-11 06:01:56,119 [MQTT Rec: JavaCollector] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect
+org.eclipse.paho.client.mqttv3.MqttException: Connection lost
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:181) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+Caused by: java.net.SocketException: Connection reset
+	at java.net.SocketInputStream.read(SocketInputStream.java:210) ~[?:1.8.0_242]
+	at java.net.SocketInputStream.read(SocketInputStream.java:141) ~[?:1.8.0_242]
+	at java.net.SocketInputStream.read(SocketInputStream.java:224) ~[?:1.8.0_242]
+	at java.io.DataInputStream.readByte(DataInputStream.java:265) ~[?:1.8.0_242]
+	at org.eclipse.paho.client.mqttv3.internal.wire.MqttInputStream.readMqttWireMessage(MqttInputStream.java:92) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:133) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	... 7 more
+2022-09-11 06:01:56,121 [MQTT Rec: JavaCollector] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 6 seconds.
+2022-09-11 06:02:52,838 [main] INFO  iot.unipi.it.services.CollectorMQTT - MQTT Connected!
+2022-09-11 06:02:53,137 [main] INFO  iot.unipi.it.services.RegistrationService - Coap server is ready!
+2022-09-11 06:04:01,155 [main] INFO  iot.unipi.it.services.CollectorMQTT - MQTT Connected!
+2022-09-11 06:04:01,449 [main] INFO  iot.unipi.it.services.RegistrationService - Coap server is ready!
+2022-09-11 06:04:09,801 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 89, "timestamp": 22}
+2022-09-11 06:04:09,891 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT sampling_rate published!
+2022-09-11 06:04:09,914 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 06:04:10,793 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 90, "timestamp": 23}
+2022-09-11 06:04:11,765 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 91, "timestamp": 24}
+2022-09-11 06:04:13,906 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 92, "timestamp": 26}
+2022-09-11 06:04:14,788 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 91, "timestamp": 27}
+2022-09-11 06:04:22,914 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 92, "timestamp": 35}
+2022-09-11 06:04:31,768 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 93, "timestamp": 44}
+2022-09-11 06:04:35,803 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 94, "timestamp": 48}
+2022-09-11 06:04:36,783 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 93, "timestamp": 49}
+2022-09-11 06:04:37,828 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 94, "timestamp": 50}
+2022-09-11 06:04:39,760 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 95, "timestamp": 52}
+2022-09-11 06:04:41,782 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 94, "timestamp": 54}
+2022-09-11 06:04:43,802 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 93, "timestamp": 56}
+2022-09-11 06:04:45,783 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 94, "timestamp": 58}
+2022-09-11 06:04:46,817 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 95, "timestamp": 59}
+2022-09-11 06:04:48,798 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 94, "timestamp": 61}
+2022-09-11 06:04:49,813 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 93, "timestamp": 62}
+2022-09-11 06:04:50,792 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 94, "timestamp": 63}
+2022-09-11 06:04:53,861 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 93, "timestamp": 66}
+2022-09-11 06:05:03,811 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 92, "timestamp": 76}
+2022-09-11 06:05:05,773 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 91, "timestamp": 78}
+2022-09-11 06:05:06,885 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 90, "timestamp": 79}
+2022-09-11 06:05:07,818 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 91, "timestamp": 80}
+2022-09-11 06:05:08,798 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 92, "timestamp": 81}
+2022-09-11 06:05:11,779 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 93, "timestamp": 84}
+2022-09-11 06:05:18,846 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 94, "timestamp": 91}
+2022-09-11 06:05:23,844 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 93, "timestamp": 96}
+2022-09-11 06:05:24,844 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 94, "timestamp": 97}
+2022-09-11 06:05:29,828 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 93, "timestamp": 102}
+2022-09-11 06:05:30,818 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 92, "timestamp": 103}
+2022-09-11 06:05:31,874 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 93, "timestamp": 104}
+2022-09-11 06:05:32,816 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 94, "timestamp": 105}
+2022-09-11 06:05:34,840 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 93, "timestamp": 107}
+2022-09-11 06:05:55,326 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 6345, "glucose": 89, "timestamp": 50}
+2022-09-11 06:05:55,361 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT sampling_rate published!
+2022-09-11 06:05:55,372 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 06:06:00,324 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 6345, "glucose": 90, "timestamp": 55}
+2022-09-11 06:06:03,291 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 6345, "glucose": 91, "timestamp": 58}
+2022-09-11 06:06:10,287 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 6345, "glucose": 92, "timestamp": 65}
+2022-09-11 06:06:11,301 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 6345, "glucose": 93, "timestamp": 66}
+2022-09-11 06:06:17,328 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 6345, "glucose": 94, "timestamp": 72}
+2022-09-11 06:06:18,292 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 6345, "glucose": 95, "timestamp": 73}
+2022-09-11 06:06:20,306 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 6345, "glucose": 96, "timestamp": 75}
+2022-09-11 06:06:21,300 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 6345, "glucose": 97, "timestamp": 76}
+2022-09-11 06:06:22,314 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 6345, "glucose": 98, "timestamp": 77}
+2022-09-11 06:06:27,477 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 91, "timestamp": 11}
+2022-09-11 06:06:28,386 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 6345, "glucose": 97, "timestamp": 83}
+2022-09-11 06:06:29,310 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 6345, "glucose": 98, "timestamp": 84}
+2022-09-11 06:06:29,560 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 92, "timestamp": 13}
+2022-09-11 06:06:30,322 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 6345, "glucose": 99, "timestamp": 85}
+2022-09-11 06:06:30,507 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 93, "timestamp": 14}
+2022-09-11 06:06:32,454 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 94, "timestamp": 16}
+2022-09-11 06:06:33,340 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 6345, "glucose": 100, "timestamp": 88}
+2022-09-11 06:06:33,381 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 06:06:33,382 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [WARNING] - 6345 - the level of glucose is higher than normal!
+2022-09-11 06:06:33,390 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 06:06:39,323 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 6345, "glucose": 99, "timestamp": 94}
+2022-09-11 06:06:39,365 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 06:06:39,366 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [NORMAL] - 6345 - the level of glucose is normal!
+2022-09-11 06:06:39,373 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 06:06:39,489 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 64609, "glucose": 95, "timestamp": 23}
+2022-09-11 06:57:03,975 [main] INFO  iot.unipi.it.services.CollectorMQTT - MQTT Connected!
+2022-09-11 06:57:04,796 [main] INFO  iot.unipi.it.services.RegistrationService - Coap server is ready!
+2022-09-11 06:57:05,531 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 93, "timestamp": 23}
+2022-09-11 06:57:05,713 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT sampling_rate published!
+2022-09-11 06:57:05,749 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 06:57:10,549 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 92, "timestamp": 28}
+2022-09-11 06:57:12,717 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 90, "timestamp": 30}
+2022-09-11 06:57:12,732 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT sampling_rate published!
+2022-09-11 06:57:12,741 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 06:57:14,766 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 89, "timestamp": 32}
+2022-09-11 06:57:15,649 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 91, "timestamp": 33}
+2022-09-11 06:57:15,681 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT sampling_rate published!
+2022-09-11 06:57:15,690 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 06:57:28,509 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 93, "timestamp": 46}
+2022-09-11 06:57:28,722 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 90, "timestamp": 46}
+2022-09-11 06:57:30,699 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 89, "timestamp": 48}
+2022-09-11 06:57:36,685 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 90, "timestamp": 54}
+2022-09-11 06:57:38,519 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 94, "timestamp": 56}
+2022-09-11 06:57:38,667 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 89, "timestamp": 56}
+2022-09-11 06:57:40,517 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 95, "timestamp": 58}
+2022-09-11 06:57:42,561 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 96, "timestamp": 60}
+2022-09-11 06:57:44,569 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 97, "timestamp": 62}
+2022-09-11 06:57:48,705 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 88, "timestamp": 66}
+2022-09-11 06:57:50,637 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 87, "timestamp": 68}
+2022-09-11 06:57:56,559 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 98, "timestamp": 74}
+2022-09-11 06:57:58,693 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 88, "timestamp": 76}
+2022-09-11 06:58:14,589 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 97, "timestamp": 92}
+2022-09-11 06:58:20,553 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 96, "timestamp": 98}
+2022-09-11 06:58:24,606 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 95, "timestamp": 102}
+2022-09-11 06:58:24,681 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 89, "timestamp": 102}
+2022-09-11 06:58:26,614 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 94, "timestamp": 104}
+2022-09-11 06:58:28,709 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 90, "timestamp": 106}
+2022-09-11 06:58:40,614 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 93, "timestamp": 118}
+2022-09-11 06:58:42,609 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 92, "timestamp": 120}
+2022-09-11 06:58:44,569 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 91, "timestamp": 122}
+2022-09-11 06:58:44,753 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 88, "timestamp": 122}
+2022-09-11 06:58:46,609 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 92, "timestamp": 124}
+2022-09-11 06:58:46,757 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 87, "timestamp": 124}
+2022-09-11 06:58:48,753 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 86, "timestamp": 126}
+2022-09-11 06:58:50,597 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 91, "timestamp": 128}
+2022-09-11 06:58:54,633 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 90, "timestamp": 132}
+2022-09-11 06:58:54,725 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 91, "timestamp": 132}
+2022-09-11 06:58:56,597 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 91, "timestamp": 134}
+2022-09-11 06:58:56,781 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 85, "timestamp": 132}
+2022-09-11 06:58:56,799 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 90, "timestamp": 134}
+2022-09-11 06:59:04,597 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 92, "timestamp": 142}
+2022-09-11 06:59:04,717 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 91, "timestamp": 142}
+2022-09-11 06:59:06,741 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 90, "timestamp": 144}
+2022-09-11 06:59:08,718 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 89, "timestamp": 146}
+2022-09-11 06:59:16,737 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 90, "timestamp": 154}
+2022-09-11 06:59:18,686 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 89, "timestamp": 156}
+2022-09-11 06:59:18,785 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 84, "timestamp": 156}
+2022-09-11 06:59:20,695 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 88, "timestamp": 158}
+2022-09-11 06:59:24,654 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 91, "timestamp": 162}
+2022-09-11 06:59:24,745 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 85, "timestamp": 162}
+2022-09-11 06:59:28,702 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 87, "timestamp": 166}
+2022-09-11 06:59:30,728 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 86, "timestamp": 168}
+2022-09-11 06:59:34,789 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 86, "timestamp": 172}
+2022-09-11 06:59:36,585 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 90, "timestamp": 174}
+2022-09-11 06:59:36,705 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 85, "timestamp": 174}
+2022-09-11 06:59:38,760 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 84, "timestamp": 176}
+2022-09-11 06:59:40,815 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 87, "timestamp": 178}
+2022-09-11 06:59:44,631 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 89, "timestamp": 182}
+2022-09-11 06:59:44,695 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 85, "timestamp": 182}
+2022-09-11 06:59:44,878 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 88, "timestamp": 182}
+2022-09-11 06:59:46,605 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 90, "timestamp": 184}
+2022-09-11 06:59:46,790 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 89, "timestamp": 184}
+2022-09-11 06:59:48,776 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 84, "timestamp": 186}
+2022-09-11 06:59:52,673 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 89, "timestamp": 190}
+2022-09-11 07:00:06,737 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 83, "timestamp": 204}
+2022-09-11 07:00:08,737 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 82, "timestamp": 206}
+2022-09-11 07:00:08,821 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 90, "timestamp": 206}
+2022-09-11 07:00:16,738 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 81, "timestamp": 214}
+2022-09-11 07:00:16,861 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 91, "timestamp": 214}
+2022-09-11 07:00:18,755 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 82, "timestamp": 216}
+2022-09-11 07:00:20,689 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 90, "timestamp": 218}
+2022-09-11 07:00:22,659 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 91, "timestamp": 220}
+2022-09-11 07:00:22,758 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 92, "timestamp": 220}
+2022-09-11 07:00:24,829 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 83, "timestamp": 220}
+2022-09-11 07:00:32,677 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 92, "timestamp": 230}
+2022-09-11 07:00:36,649 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 91, "timestamp": 234}
+2022-09-11 07:00:40,710 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 92, "timestamp": 238}
+2022-09-11 07:00:48,741 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 93, "timestamp": 246}
+2022-09-11 07:00:50,893 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 91, "timestamp": 248}
+2022-09-11 07:00:52,865 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 90, "timestamp": 250}
+2022-09-11 07:00:58,909 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 89, "timestamp": 256}
+2022-09-11 07:01:02,717 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 94, "timestamp": 260}
+2022-09-11 07:01:02,869 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 88, "timestamp": 260}
+2022-09-11 07:01:06,742 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 95, "timestamp": 264}
+2022-09-11 07:01:12,933 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 89, "timestamp": 270}
+2022-09-11 07:01:14,905 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 88, "timestamp": 272}
+2022-09-11 07:01:18,789 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 94, "timestamp": 276}
+2022-09-11 07:01:26,913 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 87, "timestamp": 284}
+2022-09-11 07:01:28,869 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 86, "timestamp": 286}
+2022-09-11 07:01:30,758 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 93, "timestamp": 288}
+2022-09-11 07:01:32,710 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 92, "timestamp": 290}
+2022-09-11 07:01:48,717 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 91, "timestamp": 306}
+2022-09-11 07:01:50,766 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 92, "timestamp": 308}
+2022-09-11 07:01:50,864 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 87, "timestamp": 308}
+2022-09-11 07:02:04,681 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 91, "timestamp": 322}
+2022-09-11 07:02:20,753 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 92, "timestamp": 338}
+2022-09-11 07:02:22,891 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 86, "timestamp": 340}
+2022-09-11 07:02:26,789 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 91, "timestamp": 344}
+2022-09-11 07:02:28,769 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 92, "timestamp": 346}
+2022-09-11 07:02:30,810 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 93, "timestamp": 348}
+2022-09-11 07:02:36,733 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 92, "timestamp": 354}
+2022-09-11 07:02:36,939 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 85, "timestamp": 354}
+2022-09-11 07:02:40,789 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 93, "timestamp": 358}
+2022-09-11 07:02:42,809 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 94, "timestamp": 360}
+2022-09-11 07:02:42,881 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 86, "timestamp": 360}
+2022-09-11 07:02:50,965 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 85, "timestamp": 368}
+2022-09-11 07:02:52,954 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 86, "timestamp": 370}
+2022-09-11 07:02:56,765 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 93, "timestamp": 374}
+2022-09-11 07:03:04,969 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 85, "timestamp": 382}
+2022-09-11 07:03:08,917 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 84, "timestamp": 386}
+2022-09-11 07:03:10,797 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 92, "timestamp": 388}
+2022-09-11 07:03:12,773 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 93, "timestamp": 390}
+2022-09-11 07:03:20,989 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 83, "timestamp": 398}
+2022-09-11 07:03:32,921 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 82, "timestamp": 410}
+2022-09-11 07:03:50,204 [main] INFO  iot.unipi.it.services.CollectorMQTT - MQTT Connected!
+2022-09-11 07:03:50,505 [main] INFO  iot.unipi.it.services.RegistrationService - Coap server is ready!
+2022-09-11 07:04:06,867 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 90, "timestamp": 444}
+2022-09-11 07:04:06,996 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT sampling_rate published!
+2022-09-11 07:04:07,016 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:04:07,017 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 82, "timestamp": 444}
+2022-09-11 07:04:07,034 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT sampling_rate published!
+2022-09-11 07:04:07,068 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:04:08,781 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 91, "timestamp": 446}
+2022-09-11 07:04:10,813 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 90, "timestamp": 448}
+2022-09-11 07:04:11,809 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 89, "timestamp": 449}
+2022-09-11 07:04:12,998 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 81, "timestamp": 450}
+2022-09-11 07:04:17,814 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 90, "timestamp": 455}
+2022-09-11 07:04:17,973 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 80, "timestamp": 455}
+2022-09-11 07:04:18,789 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 91, "timestamp": 456}
+2022-09-11 07:04:18,997 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 81, "timestamp": 456}
+2022-09-11 07:04:21,849 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 92, "timestamp": 459}
+2022-09-11 07:04:22,853 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 91, "timestamp": 460}
+2022-09-11 07:04:25,050 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 82, "timestamp": 462}
+2022-09-11 07:04:27,018 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 83, "timestamp": 464}
+2022-09-11 07:04:30,017 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 84, "timestamp": 467}
+2022-09-11 07:04:30,861 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 92, "timestamp": 468}
+2022-09-11 07:04:32,825 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 93, "timestamp": 470}
+2022-09-11 07:04:33,833 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 92, "timestamp": 471}
+2022-09-11 07:04:34,841 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 93, "timestamp": 472}
+2022-09-11 07:04:37,841 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 94, "timestamp": 475}
+2022-09-11 07:04:39,887 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 95, "timestamp": 477}
+2022-09-11 07:04:41,007 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 83, "timestamp": 478}
+2022-09-11 07:04:41,975 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 82, "timestamp": 479}
+2022-09-11 07:04:42,821 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 94, "timestamp": 480}
+2022-09-11 07:04:49,915 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 95, "timestamp": 487}
+2022-09-11 07:04:55,034 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 81, "timestamp": 492}
+2022-09-11 07:04:57,806 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 94, "timestamp": 495}
+2022-09-11 07:04:59,017 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 82, "timestamp": 496}
+2022-09-11 07:05:07,058 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 83, "timestamp": 504}
+2022-09-11 07:05:09,889 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 95, "timestamp": 507}
+2022-09-11 07:05:14,037 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 82, "timestamp": 511}
+2022-09-11 07:05:19,850 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 96, "timestamp": 517}
+2022-09-11 07:05:20,861 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 95, "timestamp": 518}
+2022-09-11 07:05:22,021 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 81, "timestamp": 519}
+2022-09-11 07:05:23,053 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 80, "timestamp": 520}
+2022-09-11 07:05:30,925 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 96, "timestamp": 528}
+2022-09-11 07:05:32,005 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 81, "timestamp": 529}
+2022-09-11 07:05:36,900 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 95, "timestamp": 534}
+2022-09-11 07:05:39,073 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 80, "timestamp": 536}
+2022-09-11 07:05:41,885 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 94, "timestamp": 539}
+2022-09-11 07:05:44,922 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 95, "timestamp": 542}
+2022-09-11 07:05:46,060 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 79, "timestamp": 543}
+2022-09-11 07:05:46,893 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 96, "timestamp": 544}
+2022-09-11 07:05:47,053 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 78, "timestamp": 544}
+2022-09-11 07:05:49,929 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 95, "timestamp": 547}
+2022-09-11 07:05:50,877 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 94, "timestamp": 548}
+2022-09-11 07:05:56,073 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 79, "timestamp": 553}
+2022-09-11 07:05:57,109 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 78, "timestamp": 554}
+2022-09-11 07:05:58,882 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 93, "timestamp": 556}
+2022-09-11 07:05:59,107 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 79, "timestamp": 556}
+2022-09-11 07:06:06,957 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 94, "timestamp": 564}
+2022-09-11 07:06:10,025 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 78, "timestamp": 567}
+2022-09-11 07:06:11,074 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 77, "timestamp": 568}
+2022-09-11 07:06:12,081 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 78, "timestamp": 569}
+2022-09-11 07:06:19,941 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 93, "timestamp": 577}
+2022-09-11 07:06:22,914 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 94, "timestamp": 580}
+2022-09-11 07:06:23,101 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 79, "timestamp": 580}
+2022-09-11 07:06:24,098 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 78, "timestamp": 581}
+2022-09-11 07:06:25,941 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 95, "timestamp": 583}
+2022-09-11 07:06:26,893 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 96, "timestamp": 584}
+2022-09-11 07:06:27,085 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 79, "timestamp": 584}
+2022-09-11 07:06:33,954 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 95, "timestamp": 591}
+2022-09-11 07:06:36,124 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 78, "timestamp": 593}
+2022-09-11 07:06:38,101 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 79, "timestamp": 595}
+2022-09-11 07:06:42,125 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 78, "timestamp": 599}
+2022-09-11 07:06:42,978 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 94, "timestamp": 600}
+2022-09-11 07:06:45,962 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 95, "timestamp": 603}
+2022-09-11 07:06:46,961 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 94, "timestamp": 604}
+2022-09-11 07:06:47,941 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 93, "timestamp": 605}
+2022-09-11 07:06:48,922 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 92, "timestamp": 606}
+2022-09-11 07:06:51,137 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 79, "timestamp": 608}
+2022-09-11 07:06:52,969 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 93, "timestamp": 610}
+2022-09-11 07:06:53,097 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 78, "timestamp": 610}
+2022-09-11 07:06:53,925 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 94, "timestamp": 611}
+2022-09-11 07:06:55,977 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 95, "timestamp": 613}
+2022-09-11 07:07:01,971 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 94, "timestamp": 619}
+2022-09-11 07:07:04,968 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 95, "timestamp": 622}
+2022-09-11 07:07:10,153 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 79, "timestamp": 627}
+2022-09-11 07:07:12,102 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 80, "timestamp": 629}
+2022-09-11 07:07:13,097 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 79, "timestamp": 630}
+2022-09-11 07:07:14,157 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 80, "timestamp": 631}
+2022-09-11 07:07:17,115 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 79, "timestamp": 634}
+2022-09-11 07:07:20,949 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 96, "timestamp": 638}
+2022-09-11 07:07:22,946 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 97, "timestamp": 640}
+2022-09-11 07:07:24,985 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 98, "timestamp": 642}
+2022-09-11 07:07:26,141 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 80, "timestamp": 643}
+2022-09-11 07:07:29,989 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 99, "timestamp": 647}
+2022-09-11 07:07:32,946 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 100, "timestamp": 650}
+2022-09-11 07:07:32,957 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:07:32,958 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-11 07:07:32,965 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:07:33,205 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 79, "timestamp": 650}
+2022-09-11 07:07:33,220 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:07:33,221 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [NORMAL] - 3 - the level of glucose is normal!
+2022-09-11 07:07:33,229 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:07:33,923 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 101, "timestamp": 651}
+2022-09-11 07:07:33,935 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:07:33,936 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-11 07:07:33,939 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:07:35,901 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 102, "timestamp": 653}
+2022-09-11 07:07:38,169 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 80, "timestamp": 655}
+2022-09-11 07:07:38,179 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:07:38,179 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [NORMAL] - 3 - the level of glucose is normal!
+2022-09-11 07:07:38,183 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:07:39,118 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 79, "timestamp": 656}
+2022-09-11 07:07:40,013 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 101, "timestamp": 657}
+2022-09-11 07:07:40,035 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:07:40,036 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-11 07:07:40,040 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:07:41,943 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 102, "timestamp": 659}
+2022-09-11 07:07:45,118 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 80, "timestamp": 662}
+2022-09-11 07:07:45,136 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:07:45,138 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [NORMAL] - 3 - the level of glucose is normal!
+2022-09-11 07:07:45,143 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:07:46,082 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 79, "timestamp": 663}
+2022-09-11 07:07:48,145 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 78, "timestamp": 665}
+2022-09-11 07:07:51,001 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 101, "timestamp": 668}
+2022-09-11 07:07:51,045 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:07:51,045 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-11 07:07:51,055 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:07:52,097 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 77, "timestamp": 669}
+2022-09-11 07:07:52,112 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:07:52,113 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [NORMAL] - 3 - the level of glucose is normal!
+2022-09-11 07:07:52,121 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:07:53,926 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 102, "timestamp": 671}
+2022-09-11 07:07:53,948 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:07:53,949 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-11 07:07:53,952 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:07:54,114 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 76, "timestamp": 671}
+2022-09-11 07:07:54,174 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:07:54,176 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [NORMAL] - 3 - the level of glucose is normal!
+2022-09-11 07:07:54,186 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:07:55,121 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 77, "timestamp": 672}
+2022-09-11 07:07:58,112 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 76, "timestamp": 675}
+2022-09-11 07:07:58,975 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 101, "timestamp": 676}
+2022-09-11 07:07:58,999 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:07:58,999 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-11 07:07:59,009 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:08:00,974 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 102, "timestamp": 678}
+2022-09-11 07:08:01,173 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 77, "timestamp": 678}
+2022-09-11 07:08:01,185 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:08:01,185 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [NORMAL] - 3 - the level of glucose is normal!
+2022-09-11 07:08:01,188 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:08:01,922 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 103, "timestamp": 679}
+2022-09-11 07:08:01,934 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:08:01,935 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-11 07:08:01,938 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:08:03,102 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 76, "timestamp": 680}
+2022-09-11 07:08:03,110 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:08:03,110 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [NORMAL] - 3 - the level of glucose is normal!
+2022-09-11 07:08:03,113 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:08:04,942 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 102, "timestamp": 682}
+2022-09-11 07:08:04,955 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:08:04,955 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-11 07:08:04,958 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:08:06,984 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 103, "timestamp": 684}
+2022-09-11 07:08:07,175 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 75, "timestamp": 684}
+2022-09-11 07:08:07,189 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:08:07,190 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [NORMAL] - 3 - the level of glucose is normal!
+2022-09-11 07:08:07,197 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:08:08,107 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 74, "timestamp": 685}
+2022-09-11 07:08:10,157 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 75, "timestamp": 687}
+2022-09-11 07:08:11,193 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 76, "timestamp": 688}
+2022-09-11 07:08:16,159 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 75, "timestamp": 693}
+2022-09-11 07:08:16,993 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 102, "timestamp": 694}
+2022-09-11 07:08:17,007 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:08:17,007 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-11 07:08:17,010 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:08:17,973 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 101, "timestamp": 695}
+2022-09-11 07:08:19,046 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 102, "timestamp": 696}
+2022-09-11 07:08:20,042 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 103, "timestamp": 697}
+2022-09-11 07:08:21,005 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 102, "timestamp": 698}
+2022-09-11 07:08:25,049 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 103, "timestamp": 702}
+2022-09-11 07:08:27,189 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 76, "timestamp": 704}
+2022-09-11 07:08:27,200 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:08:27,200 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [NORMAL] - 3 - the level of glucose is normal!
+2022-09-11 07:08:27,204 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:08:28,093 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 75, "timestamp": 705}
+2022-09-11 07:08:30,041 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 102, "timestamp": 707}
+2022-09-11 07:08:30,054 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:08:30,055 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-11 07:08:30,058 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:08:33,121 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 76, "timestamp": 710}
+2022-09-11 07:08:33,128 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:08:33,128 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [NORMAL] - 3 - the level of glucose is normal!
+2022-09-11 07:08:33,133 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:08:37,985 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 103, "timestamp": 715}
+2022-09-11 07:08:37,994 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:08:37,994 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-11 07:08:37,998 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:08:39,950 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 104, "timestamp": 717}
+2022-09-11 07:08:42,033 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 103, "timestamp": 719}
+2022-09-11 07:08:42,235 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 75, "timestamp": 719}
+2022-09-11 07:08:42,243 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:08:42,243 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [NORMAL] - 3 - the level of glucose is normal!
+2022-09-11 07:08:42,246 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:08:44,162 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 76, "timestamp": 721}
+2022-09-11 07:08:45,063 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 102, "timestamp": 722}
+2022-09-11 07:08:45,075 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:08:45,075 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-11 07:08:45,078 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:08:50,971 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 103, "timestamp": 728}
+2022-09-11 07:08:54,225 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 77, "timestamp": 731}
+2022-09-11 07:08:54,232 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:08:54,232 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [NORMAL] - 3 - the level of glucose is normal!
+2022-09-11 07:08:54,243 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:08:58,160 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 76, "timestamp": 735}
+2022-09-11 07:08:59,213 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 75, "timestamp": 736}
+2022-09-11 07:09:02,037 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 102, "timestamp": 739}
+2022-09-11 07:09:02,048 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:09:02,048 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-11 07:09:02,057 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:09:03,179 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 76, "timestamp": 740}
+2022-09-11 07:09:03,194 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:09:03,195 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [NORMAL] - 3 - the level of glucose is normal!
+2022-09-11 07:09:03,201 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:09:06,170 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 75, "timestamp": 743}
+2022-09-11 07:09:07,014 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 103, "timestamp": 744}
+2022-09-11 07:09:07,027 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:09:07,027 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-11 07:09:07,030 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:09:10,008 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 102, "timestamp": 747}
+2022-09-11 07:09:10,201 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 74, "timestamp": 747}
+2022-09-11 07:09:10,211 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:09:10,211 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [NORMAL] - 3 - the level of glucose is normal!
+2022-09-11 07:09:10,214 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+2022-09-11 07:09:11,141 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 73, "timestamp": 748}
+2022-09-11 07:09:14,209 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 3, "glucose": 72, "timestamp": 751}
+2022-09-11 07:09:15,061 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 2, "glucose": 101, "timestamp": 752}
+2022-09-11 07:09:15,075 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - MQTT alarm published!
+2022-09-11 07:09:15,075 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - [WARNING] - 2 - the level of glucose is higher than normal!
+2022-09-11 07:09:15,083 [MQTT Call: JavaCollector] INFO  iot.unipi.it.services.CollectorMQTT - Delivery Completed
+>>>>>>> b3f659249cec34ce22ff88e79e0d92f2f8955548

@@ -11,7 +11,7 @@
 //#define LOG_CONF_LEVEL_6LOWPAN                     LOG_LEVEL_DBG
 //#define LOG_CONF_LEVEL_TCPIP                       LOG_LEVEL_DBG
 
-#define IEEE802154_CONF_PANID 0x0032
+//#define IEEE802154_CONF_PANID 0x0032
 /*---------------------------------------------------------------------------*/
 #endif /* PROJECT_CONF_H_ */
 /*---------------------------------------------------------------------------*/
