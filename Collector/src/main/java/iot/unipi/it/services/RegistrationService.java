@@ -9,9 +9,9 @@ import iot.unipi.it.services.resources.ResRegistration;
 public class RegistrationService extends CoapServer {
 	private static final Logger logger = LogManager.getLogger(RegistrationService.class);
 	
-	public RegistrationService() {
-		this.add(new ResRegistration());
-		System.out.println("Prova per mirko");
+	public RegistrationService(int samplingRate) {
+		this.add(new ResRegistration(samplingRate));
+		logger.info("Coap server is ready!");
     }
 
 }

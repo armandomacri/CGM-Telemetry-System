@@ -10,7 +10,7 @@ import org.apache.logging.log4j.Logger;
 
 public class Collector {
 	private static TelemetryDBService th = TelemetryDBService.getInstance();
-	private static int samplingRate = 8;
+	private static int samplingRate;
 	
 	
 	public static void main(String[] args) throws InterruptedException {
@@ -24,12 +24,16 @@ public class Collector {
         	    samplingRate=Integer.parseInt(scanner.nextLine());
         	    break;
         	  } catch (NumberFormatException e) {
-        	    System.err.println("Only integers are allowed");
+        	    System.err.println("Only integers are allowed!");
         	  }
         }
-        CollectorMQTT mc = new CollectorMQTT(samplingRate);
-        RegistrationService rs = new RegistrationService();
+        
+        System.out.println("Sampling rate --> " + samplingRate);
         th.cleanDB();
+        
+        CollectorMQTT mc = new CollectorMQTT(samplingRate);
+        RegistrationService rs = new RegistrationService(samplingRate);
+        
         rs.start();
 
 	}

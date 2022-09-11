@@ -18,6 +18,7 @@
 // mg/dL
 
 static int glucose = 90;
+static short state = 0;
 int LOWER_BOUND_GLU = 100;
 int UPPER_BOUND_GLU = 125;
 
@@ -46,21 +47,26 @@ static void res_get_handler(coap_message_t *request, coap_message_t *response, u
     if(accept == -1 || accept == APPLICATION_JSON)
     {
 
-        /*
         // IF TOO HOT OR TOO COLD SEND A WARNING
         if (glucose > LOWER_BOUND_GLU && glucose <= UPPER_BOUND_GLU)
         {
-            LOG_INFO("Glucose level lower higher than normal.\n");
+            if(state != 1) {
+				state = 1;
+                LOG_WARN("%d - the level of glucose (%d mg/dL) is higher than normal!\n", node_id, glucose);
+			} 
         }
         else if (glucose > UPPER_BOUND_GLU)
         {
-            LOG_INFO("Glucose level too high\n");
+            if(state != 2) {
+				state = 2;
+				LOG_WARN("%d - the level of glucose (%d mg/dL) is too high!\n", node_id, glucose);
+			}
+        } else {
+            if(state != 0) {
+				state = 0;
+				LOG_INFO("%d - the level of glucose (%d mg/dL) is normal!", node_id, glucose);
+			}
         }
-        else
-        {
-;
-        }
-        */
 
         //PREPARE THE BUFFER
         snprintf((char *)buffer, COAP_MAX_CHUNK_SIZE, "{\"node_id\":%d,\"glucose\":%d,\"timestamp\":%lu}", node_id, glucose, clock_seconds());
@@ -95,17 +101,9 @@ static void res_put_handler(coap_message_t *request, coap_message_t *response, u
     bool success = true;
     if((len = coap_get_payload(request, &payload)))
     {
-        //char* msg = (char*)malloc((strlen((char*)payload))*sizeof(char));
-        //strcpy(msg, (char*)payload, len);
-
-        int new_value = atoi((char*)payload);
-	
-		LOG_INFO("Received the message: %s", request);
-		//adapting the color of the led to the state of the fruit
-		//ethylene_level = atof(data);
-		LOG_INFO("New sampling rate: %d", new_value);
-
-        
+        int rate = atoi((char*)payload);
+        sampling_rate = rate;
+		LOG_INFO("New sampling rate: %d\n", rate);
     }
 
     if(!success)

@@ -21,9 +21,11 @@ public class ResRegistration extends CoapResource{
 	private static final Logger logger = LogManager.getLogger(SmartDevice.class);
 	private static final TelemetryDBService th = TelemetryDBService.getInstance();
 	private static Collection<SmartDevice> smartDevices = Collections.synchronizedList(new ArrayList<SmartDevice>());
+	private static int samplingRate;
 	
-	public ResRegistration() {
+	public ResRegistration(int samplingRate) {
 		super("registration");
+		this.samplingRate = samplingRate;
 	}
 	
 	@Override
@@ -34,8 +36,8 @@ public class ResRegistration extends CoapResource{
         
 		if (contains(ipAddress)<0) {
 			if(th.addSensor(ipAddress)) {
-        		synchronized(smartDevices) { 
-        			ResRegistration.smartDevices.add(new SmartDevice(ipAddress));
+        		synchronized(smartDevices) {
+        			ResRegistration.smartDevices.add(new SmartDevice(ipAddress, this.samplingRate));
         		}
 				logger.info("A new smart device: [" + ipAddress + "] is now registered!");
 				exchange.respond(CoAP.ResponseCode.CREATED, "Registration, Success!".getBytes(StandardCharsets.UTF_8));

@@ -29,12 +29,22 @@ public class SmartDevice{
 	private CoapClient resAlarm;
 	private boolean stopObserve = false;
 	private short state = 0;
+	private int samplingRate;
 	
 		
-	public SmartDevice(String ipAddress) {
+	public SmartDevice(String ipAddress, int samplingRate) {
 		this.ip = ipAddress;
+		this.samplingRate = samplingRate;
+		
 		this.resGlucosio = new CoapClient("coap://[" + ipAddress + "]/glucose");
-		this.resAlarm = new CoapClient("coap://[" + ipAddress + "]/alarm"); 
+		this.resAlarm = new CoapClient("coap://[" + ipAddress + "]/alarm");
+		
+		//set sampling rate
+		String payload = Integer.toString(samplingRate);
+    	Request req = new Request(Code.PUT);
+		req.setPayload(payload);
+    	req.setURI("coap://[" + ip + "]/glucose");
+    	req.send();
 		
 		CoapObserveRelation newObserveGlucose = this.resGlucosio.observe(
 				new CoapHandler() {
@@ -84,7 +94,7 @@ public class SmartDevice{
 								req.setPayload(payload);
 	                        	req.setURI("coap://[" + ip + "]/alarm?color=y");
 	                        	req.send();
-	                        	logger.info("[WARNING] - "+ip+" - the level of glucose is higher than normal!");
+	                        	logger.info("[WARNING] - "+ip+" - the level of glucose ("+value+" mg/dL) is higher than normal!");
 	                        	th.updateSensorState(ip, state);
 							}
 						} else if(value > UPPER_BOUND_GLU)
@@ -96,7 +106,7 @@ public class SmartDevice{
 								req.setPayload(payload);
 	                        	req.setURI("coap://[" + ip + "]/alarm?color=r");
 	                        	req.send();
-	                        	logger.info("[CRITICAL] - "+ip+" - the level of glucose is too high!");
+	                        	logger.info("[CRITICAL] - "+ip+" - the level of glucose ("+value+" mg/dL) is too high!");
 	                        	th.updateSensorState(ip, state);
 							}
 						} else {
@@ -108,11 +118,10 @@ public class SmartDevice{
 								req.setPayload(payload);
 	                        	req.setURI("coap://[" + ip + "]/alarm?color=g");
 	                        	req.send();
-	                        	logger.info("[NORMAL] - "+ip+" - the level of glucose is normal!");
+	                        	logger.info("[NORMAL] - "+ip+" - the level of glucose ("+value+" mg/dL) is normal!");
 	                        	th.updateSensorState(ip, state);
 							}
-						}
-						
+						}					
 					}
 					
 					public void onError() {
@@ -132,7 +141,6 @@ public class SmartDevice{
 		if (stopObserve) {
 			newObserveGlucose.proactiveCancel();
 		}
-		
 	}
 
 	public String getIP() {
