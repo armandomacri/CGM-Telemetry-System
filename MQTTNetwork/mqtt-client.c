@@ -212,7 +212,7 @@ static int
 simulate_glucose_level(void)
 {
     // extimate new glucose level
-    srand(time(NULL) * node_id);
+    //srand(time(NULL));
 
     int new_glu = glucose;
     int random = rand() % 8; // generate 0, 1, 2, 3, 4, 5, 6, 7

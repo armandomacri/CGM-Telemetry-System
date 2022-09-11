@@ -354,4 +354,378 @@ org.eclipse.paho.client.mqttv3.MqttPersistenceException: MqttException
 2022-09-07 11:23:06,876 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 92, "timestamp": 52}
 2022-09-07 11:23:12,848 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 93, "timestamp": 58}
 2022-09-07 11:23:14,852 [MQTT Call: CollectorMQTT] INFO  iot.unipi.it.services.CollectorMQTT - Message arrived: {"node": 4, "glucose": 92, "timestamp": 60}
+<<<<<<< HEAD
+2022-09-07 13:22:08,253 [main] INFO  iot.unipi.it.services.CollectorMQTT - MQTT Connected!
+2022-09-07 13:22:08,456 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-07 13:26:16,414 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.services.CollectorMQTT - Connection is broken!
+2022-09-07 13:26:16,416 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 3 seconds.
+2022-09-07 13:26:16,416 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.services.CollectorMQTT - Something wrong with thread sleep!
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method) ~[?:1.8.0_242]
+	at iot.unipi.it.services.CollectorMQTT.connectionLost(CollectorMQTT.java:84) ~[classes/:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.connectionLost(CommsCallback.java:292) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:423) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:181) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+2022-09-07 13:26:16,434 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 3 seconds.
+2022-09-07 13:26:19,435 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Reconnecting ...
+2022-09-07 13:26:19,450 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect
+org.eclipse.paho.client.mqttv3.MqttException: Unable to connect to server
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:94) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:701) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_242]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_242]
+	at java.net.Socket.connect(Socket.java:607) ~[?:1.8.0_242]
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:84) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	... 8 more
+2022-09-07 13:26:19,456 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 6 seconds.
+2022-09-07 13:26:25,458 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Reconnecting ...
+2022-09-07 13:26:25,472 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect
+org.eclipse.paho.client.mqttv3.MqttException: Unable to connect to server
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:94) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:701) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_242]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_242]
+	at java.net.Socket.connect(Socket.java:607) ~[?:1.8.0_242]
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:84) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	... 8 more
+2022-09-07 13:26:25,475 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 12 seconds.
+2022-09-07 13:26:37,477 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Reconnecting ...
+2022-09-07 13:26:37,482 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect
+org.eclipse.paho.client.mqttv3.MqttException: Unable to connect to server
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:94) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:701) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_242]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_242]
+	at java.net.Socket.connect(Socket.java:607) ~[?:1.8.0_242]
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:84) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	... 8 more
+2022-09-07 13:26:37,484 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 24 seconds.
+2022-09-07 13:27:25,799 [main] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect, Retrying ...
+org.eclipse.paho.client.mqttv3.MqttException: Unable to connect to server
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:94) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:701) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_242]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_242]
+	at java.net.Socket.connect(Socket.java:607) ~[?:1.8.0_242]
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:84) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	... 8 more
+2022-09-07 13:28:13,020 [main] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect, Retrying ...
+org.eclipse.paho.client.mqttv3.MqttException: MqttException
+	at org.eclipse.paho.client.mqttv3.internal.ExceptionHelper.createMqttException(ExceptionHelper.java:38) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:715) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+Caused by: java.lang.IllegalArgumentException: hostname can't be null
+	at java.net.InetSocketAddress.checkHost(InetSocketAddress.java:149) ~[?:1.8.0_242]
+	at java.net.InetSocketAddress.<init>(InetSocketAddress.java:216) ~[?:1.8.0_242]
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:76) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:701) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	... 7 more
+2022-09-07 13:28:54,149 [main] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect, Retrying ...
+org.eclipse.paho.client.mqttv3.MqttException: MqttException
+	at org.eclipse.paho.client.mqttv3.internal.ExceptionHelper.createMqttException(ExceptionHelper.java:38) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:715) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+Caused by: java.lang.IllegalArgumentException: hostname can't be null
+	at java.net.InetSocketAddress.checkHost(InetSocketAddress.java:149) ~[?:1.8.0_242]
+	at java.net.InetSocketAddress.<init>(InetSocketAddress.java:216) ~[?:1.8.0_242]
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:76) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:701) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	... 7 more
+2022-09-07 13:29:31,614 [main] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect, Retrying ...
+org.eclipse.paho.client.mqttv3.MqttException: MqttException
+	at org.eclipse.paho.client.mqttv3.internal.ExceptionHelper.createMqttException(ExceptionHelper.java:38) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:715) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+Caused by: java.lang.IllegalArgumentException: hostname can't be null
+	at java.net.InetSocketAddress.checkHost(InetSocketAddress.java:149) ~[?:1.8.0_242]
+	at java.net.InetSocketAddress.<init>(InetSocketAddress.java:216) ~[?:1.8.0_242]
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:76) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:701) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	... 7 more
+2022-09-07 13:29:55,886 [main] INFO  iot.unipi.it.services.CollectorMQTT - MQTT Connected!
+2022-09-07 13:29:56,059 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+2022-09-07 13:30:21,646 [main] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect, Retrying ...
+org.eclipse.paho.client.mqttv3.MqttException: MqttException
+	at org.eclipse.paho.client.mqttv3.internal.ExceptionHelper.createMqttException(ExceptionHelper.java:38) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:715) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+Caused by: java.lang.IllegalArgumentException: hostname can't be null
+	at java.net.InetSocketAddress.checkHost(InetSocketAddress.java:149) ~[?:1.8.0_242]
+	at java.net.InetSocketAddress.<init>(InetSocketAddress.java:216) ~[?:1.8.0_242]
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:76) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:701) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	... 7 more
+2022-09-07 13:30:44,926 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.services.CollectorMQTT - Connection is broken!
+2022-09-07 13:30:44,927 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 3 seconds.
+2022-09-07 13:30:44,928 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.services.CollectorMQTT - Something wrong with thread sleep!
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method) ~[?:1.8.0_242]
+	at iot.unipi.it.services.CollectorMQTT.connectionLost(CollectorMQTT.java:84) ~[classes/:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.connectionLost(CommsCallback.java:292) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:423) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:181) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+2022-09-07 13:30:44,940 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 3 seconds.
+2022-09-07 13:30:44,950 [main] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect, Retrying ...
+org.eclipse.paho.client.mqttv3.MqttPersistenceException: MqttException
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.restoreBackups(MqttDefaultFilePersistence.java:276) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.persist.MqttDefaultFilePersistence.open(MqttDefaultFilePersistence.java:126) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ConnectActionListener.connect(ConnectActionListener.java:174) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ConnectActionListener.onFailure(ConnectActionListener.java:137) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.fireActionEvent(CommsCallback.java:326) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.handleActionComplete(CommsCallback.java:260) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.asyncOperationComplete(CommsCallback.java:445) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:418) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:170) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+2022-09-07 13:30:47,945 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Reconnecting ...
+2022-09-07 13:30:47,960 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Connection is restored
+2022-09-07 13:31:11,660 [main] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect, Retrying ...
+org.eclipse.paho.client.mqttv3.MqttException: MqttException
+	at org.eclipse.paho.client.mqttv3.internal.ExceptionHelper.createMqttException(ExceptionHelper.java:38) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:715) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+Caused by: java.lang.IllegalArgumentException: hostname can't be null
+	at java.net.InetSocketAddress.checkHost(InetSocketAddress.java:149) ~[?:1.8.0_242]
+	at java.net.InetSocketAddress.<init>(InetSocketAddress.java:216) ~[?:1.8.0_242]
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:76) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:701) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	... 7 more
+2022-09-07 13:31:33,802 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.services.CollectorMQTT - Connection is broken!
+2022-09-07 13:31:33,803 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 3 seconds.
+2022-09-07 13:31:33,803 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.services.CollectorMQTT - Something wrong with thread sleep!
+java.lang.InterruptedException: sleep interrupted
+	at java.lang.Thread.sleep(Native Method) ~[?:1.8.0_242]
+	at iot.unipi.it.services.CollectorMQTT.connectionLost(CollectorMQTT.java:84) ~[classes/:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsCallback.connectionLost(CommsCallback.java:292) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms.shutdownConnection(ClientComms.java:423) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.CommsReceiver.run(CommsReceiver.java:181) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+2022-09-07 13:31:33,808 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 3 seconds.
+2022-09-07 13:31:34,990 [main] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect, Retrying ...
+org.eclipse.paho.client.mqttv3.MqttException: Unable to connect to server
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:94) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:701) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_242]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_242]
+	at java.net.Socket.connect(Socket.java:607) ~[?:1.8.0_242]
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:84) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	... 8 more
+2022-09-07 13:31:36,809 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Reconnecting ...
+2022-09-07 13:31:36,831 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect
+org.eclipse.paho.client.mqttv3.MqttException: Unable to connect to server
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:94) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:701) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_242]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_242]
+	at java.net.Socket.connect(Socket.java:607) ~[?:1.8.0_242]
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:84) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	... 8 more
+2022-09-07 13:31:36,836 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 6 seconds.
+2022-09-07 13:31:42,840 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Reconnecting ...
+2022-09-07 13:31:42,844 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect
+org.eclipse.paho.client.mqttv3.MqttException: Unable to connect to server
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:94) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:701) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_242]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_242]
+	at java.net.Socket.connect(Socket.java:607) ~[?:1.8.0_242]
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:84) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	... 8 more
+2022-09-07 13:31:42,846 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 12 seconds.
+2022-09-07 13:31:54,847 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Reconnecting ...
+2022-09-07 13:31:54,851 [MQTT Rec: CollectorMQTT] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect
+org.eclipse.paho.client.mqttv3.MqttException: Unable to connect to server
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:94) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:701) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_242]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_242]
+	at java.net.Socket.connect(Socket.java:607) ~[?:1.8.0_242]
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:84) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	... 8 more
+2022-09-07 13:31:54,853 [MQTT Rec: CollectorMQTT] WARN  iot.unipi.it.services.CollectorMQTT - Trying to reconnect in 24 seconds.
+2022-09-07 13:32:01,668 [main] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect, Retrying ...
+org.eclipse.paho.client.mqttv3.MqttException: MqttException
+	at org.eclipse.paho.client.mqttv3.internal.ExceptionHelper.createMqttException(ExceptionHelper.java:38) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:715) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+Caused by: java.lang.IllegalArgumentException: hostname can't be null
+	at java.net.InetSocketAddress.checkHost(InetSocketAddress.java:149) ~[?:1.8.0_242]
+	at java.net.InetSocketAddress.<init>(InetSocketAddress.java:216) ~[?:1.8.0_242]
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:76) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:701) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	... 7 more
+2022-09-07 13:32:27,883 [main] ERROR iot.unipi.it.services.CollectorMQTT - CollectorMQTT unable to connect, Retrying ...
+org.eclipse.paho.client.mqttv3.MqttException: Unable to connect to server
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:94) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at org.eclipse.paho.client.mqttv3.internal.ClientComms$ConnectBG.run(ClientComms.java:701) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	at java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511) ~[?:1.8.0_242]
+	at java.util.concurrent.FutureTask.run(FutureTask.java:266) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.access$201(ScheduledThreadPoolExecutor.java:180) ~[?:1.8.0_242]
+	at java.util.concurrent.ScheduledThreadPoolExecutor$ScheduledFutureTask.run(ScheduledThreadPoolExecutor.java:293) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1149) ~[?:1.8.0_242]
+	at java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:624) ~[?:1.8.0_242]
+	at java.lang.Thread.run(Thread.java:748) ~[?:1.8.0_242]
+Caused by: java.net.ConnectException: Connection refused (Connection refused)
+	at java.net.PlainSocketImpl.socketConnect(Native Method) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.doConnect(AbstractPlainSocketImpl.java:350) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connectToAddress(AbstractPlainSocketImpl.java:206) ~[?:1.8.0_242]
+	at java.net.AbstractPlainSocketImpl.connect(AbstractPlainSocketImpl.java:188) ~[?:1.8.0_242]
+	at java.net.SocksSocketImpl.connect(SocksSocketImpl.java:392) ~[?:1.8.0_242]
+	at java.net.Socket.connect(Socket.java:607) ~[?:1.8.0_242]
+	at org.eclipse.paho.client.mqttv3.internal.TCPNetworkModule.start(TCPNetworkModule.java:84) ~[org.eclipse.paho.client.mqttv3-1.2.0.jar:?]
+	... 8 more
+2022-09-07 13:32:48,167 [main] INFO  iot.unipi.it.services.CollectorMQTT - MQTT Connected!
+2022-09-07 13:32:48,332 [main] INFO  iot.unipi.it.services.RegistrationService - CoAP Server is up
+=======
 >>>>>>> b7d8e85a8fe5876c89d198fc908a2bc52e52995b
+>>>>>>> fa65a1e1a463bf1ca6b9290ffe1969ddc3ec4716

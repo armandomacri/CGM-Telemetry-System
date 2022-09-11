@@ -22,7 +22,7 @@ import org.apache.logging.log4j.Logger;
 public class CollectorMQTT implements MqttCallback{
 	
 	private static String broker = "tcp://127.0.0.1:1883";
-	private static String clientId = "CollectorMQTT";
+	private static String clientId = "JavaCollector";
 	private static String subTopic = "glucose";
 	private static String pubTopic = "alarm";
 	private static String pubTopic2 = "sampling_rate";
